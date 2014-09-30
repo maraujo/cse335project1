@@ -24,37 +24,14 @@ public:
 	/// \brief Copy constructor (disabled)
 	CFishAngel(const CFishAngel &) = delete;
 
+	/// \brief Destructor
 	~CFishAngel();
 
 	
 	virtual std::shared_ptr<xmlnode::CXmlNode> CFishAngel::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
 
+	/// \brief Accept Visitor
 	virtual void Accept(CItemVisitor *visitor) override { visitor->VisitAngel(this);  }
-
-	virtual void CFishAngel::PassTime() override {
-		CAquarium *aquarium = GetAquarium();
-		// If fish is pregnant
-		if (IsPregnant()){
-			//And it is time to have babes
-			if (mPregnantDay > maxPregnancyDays){
-				//Have two babes
-				auto babe1 = std::make_shared<CFishAngel>(aquarium);
-				auto babe2 = std::make_shared<CFishAngel>(aquarium);
-				babe1->SetLocation(GetX(), GetY());
-				babe2->SetLocation(GetX(), GetY());
-				aquarium->Add(babe1);
-				aquarium->Add(babe2);
-
-				FinishPregnancy();
-			}
-			else
-			{
-				mPregnantDay++;
-			}
-			
-		}
-		else{
-			mDaysSinceSex++;
-		}
-	}
+	
+	virtual void CFishAngel::PassTime() override;
 };

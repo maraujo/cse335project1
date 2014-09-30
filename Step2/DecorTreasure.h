@@ -9,6 +9,9 @@
 #include <memory>
 #include "Item.h"
 
+/**
+* \brief Tresure Class Implementation
+*/
 class CDecorTreasure :
 	public CItem
 {

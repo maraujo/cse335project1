@@ -9,6 +9,9 @@ const int minDaysAfterSex = 3;
 ///Days of pregnancy to have babe;
 const int maxPregnancyDays = 10;
 
+/**
+ * \brief Fish Class Implementation
+ */
 class CFish :
 	public CItem
 {
@@ -25,20 +28,24 @@ public:
 	CFish::CFish(CAquarium *aquarium, const std::wstring &filename);
 	std::shared_ptr<xmlnode::CXmlNode> CFish::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
 	void CFish::XmlLoad(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
+	/// \brief check if it is interested in sex
 	bool CFish::IsInterested(){ return mDaysSinceSex > minDaysAfterSex; }
-	/// Set Gender
+	/// \brief Set Gender
 	void CFish::SetGender(Gender gender){ mGender = gender; }
-	/// Get Gender
+	/// \brief Get Gender
 	Gender CFish::GetGender(){ return mGender; }
-	
-	/// Set Days Since Sex
+	/// \brief Set Days Since Sex
 	void CFish::SetDaysSinceSex(int days){ mDaysSinceSex = days; }
-
+	/// \brief Accept Visitor
 	virtual void CFish::Accept(CItemVisitor *visitor) = 0;
+	/// \brief Check if it is Pregnant
 	bool CFish::IsPregnant(){ return mPregnant; }
+	/// \brief Start Pregnancy
 	void CFish::StartPregnancy(){ mPregnant = true;	}
+	/// \brief Finish Pregnancy
 	void CFish::FinishPregnancy(){ mPregnant = false; }
-	
+
+	/// Pass time each second
 	virtual void CFish::PassTime(){}
 
 protected:

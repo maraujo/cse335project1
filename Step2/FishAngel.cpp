@@ -52,3 +52,36 @@ std::shared_ptr<xmlnode::CXmlNode> CFishAngel::XmlSave(const std::shared_ptr<xml
 	itemNode->SetAttribute(L"type", L"angel");
 	return itemNode;
 }
+
+
+/**
+ * \brief Pass time
+ *
+ * Increment day since had sex, increment pregnant day, and check if it is time to have a babe
+ */
+void CFishAngel::PassTime(){
+	CAquarium *aquarium = GetAquarium();
+	// If fish is pregnant
+	if (IsPregnant()){
+		//And it is time to have babes
+		if (mPregnantDay > maxPregnancyDays){
+			//Have two babes
+			auto babe1 = std::make_shared<CFishAngel>(aquarium);
+			auto babe2 = std::make_shared<CFishAngel>(aquarium);
+			babe1->SetLocation(GetX(), GetY());
+			babe2->SetLocation(GetX(), GetY());
+			aquarium->Add(babe1);
+			aquarium->Add(babe2);
+
+			FinishPregnancy();
+		}
+		else
+		{
+			mPregnantDay++;
+		}
+
+	}
+	else{
+		mDaysSinceSex++;
+	}
+}
