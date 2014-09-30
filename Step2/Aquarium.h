@@ -13,7 +13,9 @@
 #include <vector>
 #include "XmlNode.h"
 
+
 class CItem;
+class CItemVisitor;
 
 /**
 * \brief Represents an aquarium
@@ -45,6 +47,8 @@ public:
 	/// \brief Get the height of the aquarium
 	/// \returns Aquarium height
 	int GetHeight() const { return mBackground->GetHeight(); }
+
+	void Accept(CItemVisitor *visitor);
 
 private:
 	std::unique_ptr<Gdiplus::Bitmap> mBackground; ///< Background image to use

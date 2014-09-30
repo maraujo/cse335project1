@@ -27,4 +27,6 @@ public:
 	~CFishBeta();
 
 	std::shared_ptr<xmlnode::CXmlNode> CFishBeta::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
+
+	virtual void Accept(CItemVisitor *visitor) override { visitor->VisitBeta(this); }
 };

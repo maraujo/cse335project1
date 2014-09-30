@@ -12,6 +12,7 @@
 #include <string>
 #include <memory>
 #include "XmlNode.h"
+#include "ItemVisitor.h"
 
 class CAquarium;
 
@@ -77,6 +78,10 @@ public:
 	/// \brief Set the mirror status
 	/// \param m New mirror flag
 	void SetMirror(bool m) { mMirror = m; }
+
+	/** \brief Accept a visitor
+	* \param visitor The visitor we accept */
+	virtual void Accept(CItemVisitor *visitor){};
 
 protected:
 	

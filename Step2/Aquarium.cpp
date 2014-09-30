@@ -10,6 +10,7 @@
 #include "FishBeta.h"
 #include "FishAngel.h"
 #include "FishCat.h"
+#include "Breeding.h"
 #include "DecorTreasure.h"
 #include "XmlNode.h"
 
@@ -19,6 +20,8 @@ using namespace xmlnode;
 
 const int TrashCanWidth = 51;
 const int TrashCanHeight = 70;
+/// FrameCounter
+int frameCount = 0;
 
 /**
 * \brief Constructor
@@ -57,6 +60,7 @@ void CAquarium::OnDraw(Gdiplus::Graphics *graphics)
 	SolidBrush green(Color(0, 64, 0));
 	graphics->DrawString(L"Under the Sea!", -1, &font, PointF(2, 2), &green);
 
+	
 	for (auto item : mItems)
 	{
 		item->Draw(graphics);
@@ -126,7 +130,6 @@ bool CAquarium::IsOverTrashcan(int x, int y)
 
 	return x < (int)mTrashcan->GetWidth() && y < (int)mTrashcan->GetHeight();
 }
-
 
 /**
  * \brief Set status to member mTrashcanActive
@@ -286,8 +289,34 @@ void CAquarium::XmlItem(const std::shared_ptr<xmlnode::CXmlNode> &node)
 */
 void CAquarium::Update(double elapsed)
 {
+
+	/// Frame Conte
+	frameCount++;
+
+	
+	if (frameCount % 33 == 0){
+		CBreeding breedVisitor;
+		Accept(&breedVisitor);
+
+		breedVisitor.CheckAngelsHadSex();
+		breedVisitor.CheckCatsHadSex();
+		breedVisitor.passDayFishes();
+
+	}
+
 	for (auto item : mItems)
 	{
 		item->Update(elapsed);
+	}
+}
+
+/** \brief Accept a visitor for the collection
+* \param visitor The visitor for the collection
+*/
+void CAquarium::Accept(CItemVisitor *visitor)
+{
+	for (auto item : mItems)
+	{
+		item->Accept(visitor);
 	}
 }

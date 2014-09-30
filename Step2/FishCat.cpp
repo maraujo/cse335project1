@@ -28,6 +28,12 @@ const int MinSpeedX = 50;
 CFishCat::CFishCat(CAquarium *aquarium) : CFish(aquarium,FishCatImageName)
 {
 	mSpeedX = MinSpeedX + ((double)rand() / RAND_MAX) * (MaxSpeedX - MinSpeedX);
+	/// Days since had sex
+	mDaysSinceSex = 0;
+	/// is Pregnant
+	mPregnant = false;
+	/// Days since had sex
+	mPregnantDay = 0;
 }
 
 /**

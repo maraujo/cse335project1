@@ -26,6 +26,14 @@ const int MinSpeedX = 25;
 CFishBeta::CFishBeta(CAquarium *aquarium) : CFish(aquarium,FishBetaImageName)
 {
 	mSpeedX = MinSpeedX + ((double)rand() / RAND_MAX) * (MaxSpeedX - MinSpeedX);
+	
+	//Set gender 50% to be MALE or FEMALE
+	if ((double)rand() > 0.5){
+		mGender = MALE;
+	}
+	else{
+		mGender = FEMALE;
+	}
 }
 
 /**

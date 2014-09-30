@@ -9,6 +9,7 @@
 #include "FishBeta.h"
 #include "FishAngel.h"
 #include "FishCat.h"
+#include "Breeding.h"
 #include "DecorTreasure.h"
 #include "ChildView.h"
 
@@ -28,6 +29,7 @@ const int InitialX = 200;
 
 /// Initial fish Y location
 const int InitialY = 200;
+
 
 
 // CChildView

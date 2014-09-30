@@ -26,6 +26,13 @@ const int MinSpeedX = 10;
 CFishAngel::CFishAngel(CAquarium *aquarium) : CFish(aquarium, FishAngelImageName)
 {
 	mSpeedX = MinSpeedX + ((double)rand() / RAND_MAX) * (MaxSpeedX - MinSpeedX);
+	/// Days since had sex
+	mDaysSinceSex = 0;
+	/// is Pregnant
+	mPregnant = false;
+	/// Days since had sex
+	mPregnantDay = 0;
+
 }
 
 /**

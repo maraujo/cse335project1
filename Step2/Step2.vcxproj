@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aquarium.h" />
+    <ClInclude Include="Breeding.h" />
     <ClInclude Include="ChildView.h" />
     <ClInclude Include="DecorTreasure.h" />
     <ClInclude Include="Fish.h" />
@@ -107,6 +108,7 @@
     <ClInclude Include="FishBeta.h" />
     <ClInclude Include="FishCat.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemVisitor.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -116,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Aquarium.cpp" />
+    <ClCompile Include="Breeding.cpp" />
     <ClCompile Include="ChildView.cpp" />
     <ClCompile Include="DecorTreasure.cpp" />
     <ClCompile Include="Fish.cpp" />
@@ -123,6 +126,7 @@
     <ClCompile Include="FishBeta.cpp" />
     <ClCompile Include="FishCat.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemVisitor.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

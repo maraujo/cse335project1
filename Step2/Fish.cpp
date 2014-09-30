@@ -35,11 +35,13 @@ CItem(aquarium, filename)
 	
 	if (((double)rand() / RAND_MAX) > 0.5){
 		mSpeedY = ((double)rand() / RAND_MAX) * MaxSpeedY;
+		SetGender(MALE);
 	}
 	else{
 		mSpeedY = -1*((double)rand() / RAND_MAX) * MaxSpeedY;
+		SetGender(FEMALE);
 	}
-	
+
 }
 
 CFish::~CFish()
