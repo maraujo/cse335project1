@@ -1,5 +1,6 @@
 #pragma once
 #include "Item.h"
+#include "ItemVisitor.h"
 class CFish :
 	public CItem
 {
@@ -14,6 +15,10 @@ public:
 	CFish::CFish(CAquarium *aquarium, const std::wstring &filename);
 	std::shared_ptr<xmlnode::CXmlNode> CFish::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
 	void CFish::XmlLoad(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
+
+	/** \brief Accept a visitor
+	* \param visitor The visitor we accept */
+	virtual void Accept(CItemVisitor *visitor);
 protected:
 	/// Fish speed in the X direction
 	double mSpeedX;

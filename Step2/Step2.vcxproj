@@ -107,6 +107,7 @@
     <ClInclude Include="FishBeta.h" />
     <ClInclude Include="FishCat.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemVisitor.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -123,6 +124,7 @@
     <ClCompile Include="FishBeta.cpp" />
     <ClCompile Include="FishCat.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemVisitor.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
