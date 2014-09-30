@@ -126,13 +126,18 @@ $(document).ready(function(){initNavTree('_decor_treasure_8h_source.html','');})
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;               <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_c_decor_treasure.html#a77cf0e3b11aaf48dd06aeb84d3b75a81">Draw</a>(Gdiplus::Graphics *graphics);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;               </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;               <span class="keyword">virtual</span> std::shared_ptr&lt;xmlnode::CXmlNode&gt; <a class="code" href="class_c_decor_treasure.html#aa65c74f77df10ce7a478f226ffdb1d2f">CDecorTreasure::XmlSave</a>(<span class="keyword">const</span> std::shared_ptr&lt;xmlnode::CXmlNode&gt; &amp;node) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_c_decor_treasure.html#a52a7c91150632f8005040b7859fe2aef">   36</a></span>&#160;               <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_c_decor_treasure.html#a52a7c91150632f8005040b7859fe2aef">Accept</a>(<a class="code" href="class_c_item_visitor.html">CItemVisitor</a> *visitor)<span class="keyword"> override </span>{ visitor-&gt;<a class="code" href="class_c_item_visitor.html#af0984e69052eeda70fdd87005490ffce">VisitDecorTreasure</a>(<span class="keyword">this</span>); }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="ttc" id="class_c_decor_treasure_html_a77cf0e3b11aaf48dd06aeb84d3b75a81"><div class="ttname"><a href="class_c_decor_treasure.html#a77cf0e3b11aaf48dd06aeb84d3b75a81">CDecorTreasure::Draw</a></div><div class="ttdeci">virtual void Draw(Gdiplus::Graphics *graphics)</div><div class="ttdoc">Draw our fish. </div><div class="ttdef"><b>Definition:</b> DecorTreasure.cpp:35</div></div>
 <div class="ttc" id="class_c_aquarium_html"><div class="ttname"><a href="class_c_aquarium.html">CAquarium</a></div><div class="ttdoc">Represents an aquarium. </div><div class="ttdef"><b>Definition:</b> Aquarium.h:23</div></div>
 <div class="ttc" id="_item_8h_html"><div class="ttname"><a href="_item_8h.html">Item.h</a></div><div class="ttdoc">Creates Item that will be added to Aquarium. </div></div>
 <div class="ttc" id="class_c_decor_treasure_html_aa65c74f77df10ce7a478f226ffdb1d2f"><div class="ttname"><a href="class_c_decor_treasure.html#aa65c74f77df10ce7a478f226ffdb1d2f">CDecorTreasure::XmlSave</a></div><div class="ttdeci">virtual std::shared_ptr&lt; xmlnode::CXmlNode &gt; XmlSave(const std::shared_ptr&lt; xmlnode::CXmlNode &gt; &amp;node) override</div><div class="ttdoc">Save this item to an XML node. </div><div class="ttdef"><b>Definition:</b> DecorTreasure.cpp:48</div></div>
+<div class="ttc" id="class_c_decor_treasure_html_a52a7c91150632f8005040b7859fe2aef"><div class="ttname"><a href="class_c_decor_treasure.html#a52a7c91150632f8005040b7859fe2aef">CDecorTreasure::Accept</a></div><div class="ttdeci">virtual void Accept(CItemVisitor *visitor) override</div><div class="ttdoc">Accept a visitor. </div><div class="ttdef"><b>Definition:</b> DecorTreasure.h:36</div></div>
+<div class="ttc" id="class_c_item_visitor_html"><div class="ttname"><a href="class_c_item_visitor.html">CItemVisitor</a></div><div class="ttdoc">Item Visitor Class Implementation. </div><div class="ttdef"><b>Definition:</b> ItemVisitor.h:20</div></div>
 <div class="ttc" id="class_c_item_html"><div class="ttname"><a href="class_c_item.html">CItem</a></div><div class="ttdoc">Base class for any item in our aquarium. </div><div class="ttdef"><b>Definition:</b> Item.h:22</div></div>
+<div class="ttc" id="class_c_item_visitor_html_af0984e69052eeda70fdd87005490ffce"><div class="ttname"><a href="class_c_item_visitor.html#af0984e69052eeda70fdd87005490ffce">CItemVisitor::VisitDecorTreasure</a></div><div class="ttdeci">virtual void VisitDecorTreasure(CDecorTreasure *treasure)</div><div class="ttdoc">Visit a CDecorTreasure object. </div><div class="ttdef"><b>Definition:</b> ItemVisitor.h:40</div></div>
 <div class="ttc" id="class_c_decor_treasure_html_af76bd581a4d62c77df6489c40d587922"><div class="ttname"><a href="class_c_decor_treasure.html#af76bd581a4d62c77df6489c40d587922">CDecorTreasure::CDecorTreasure</a></div><div class="ttdeci">CDecorTreasure()=delete</div><div class="ttdoc">Default constructor (disabled) </div></div>
 <div class="ttc" id="class_c_decor_treasure_html"><div class="ttname"><a href="class_c_decor_treasure.html">CDecorTreasure</a></div><div class="ttdoc">Tresure Class Implementation. </div><div class="ttdef"><b>Definition:</b> DecorTreasure.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -141,7 +146,7 @@ $(document).ready(function(){initNavTree('_decor_treasure_8h_source.html','');})
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_e51582f0a5b802603ba717b8c60bb6a2.html">Step2</a></li><li class="navelem"><a class="el" href="_decor_treasure_8h.html">DecorTreasure.h</a></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:01:44 for CSE 335 Project by
+    <li class="footer">Generated on Tue Sep 30 2014 18:30:36 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

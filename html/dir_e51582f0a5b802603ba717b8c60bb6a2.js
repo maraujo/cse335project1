@@ -31,7 +31,10 @@ var dir_e51582f0a5b802603ba717b8c60bb6a2 =
     [ "Item.h", "_item_8h.html", [
       [ "CItem", "class_c_item.html", "class_c_item" ]
     ] ],
-    [ "ItemVisitor.h", "_item_visitor_8h_source.html", null ],
+    [ "ItemVisitor.cpp", "_item_visitor_8cpp.html", null ],
+    [ "ItemVisitor.h", "_item_visitor_8h.html", [
+      [ "CItemVisitor", "class_c_item_visitor.html", "class_c_item_visitor" ]
+    ] ],
     [ "resource.h", "resource_8h_source.html", null ],
     [ "stdafx.h", "_step2_2stdafx_8h_source.html", null ],
     [ "targetver.h", "_step2_2targetver_8h_source.html", null ],

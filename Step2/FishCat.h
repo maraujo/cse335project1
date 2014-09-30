@@ -30,6 +30,8 @@ public:
 
 	virtual std::shared_ptr<xmlnode::CXmlNode> CFishCat::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
 
+	/** \brief Accept a visitor
+	* \param visitor The visitor we accept */
 	void Accept(CItemVisitor *visitor) override { visitor->VisitCat(this); }
 
 	virtual void CFishCat::PassTime() override {
@@ -58,5 +60,4 @@ public:
 			mDaysSinceSex++;
 		}
 	}
-
 };

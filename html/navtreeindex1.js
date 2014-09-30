@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classxmlnode_1_1_c_xml_node_1_1_document.html#ae3942b80f5526dc558a6883c31f1ef3b":[0,0,1,0,1,2],
+"classxmlnode_1_1_c_xml_node_1_1_document.html#ae7195645fbb31e3c38a4e4203f3b43da":[0,0,1,0,1,8],
+"classxmlnode_1_1_c_xml_node_1_1_exception.html":[0,0,1,0,2],
+"classxmlnode_1_1_c_xml_node_1_1_exception.html#a0d47315d459f047bbe5356844c8645d7":[0,0,1,0,2,9],
 "classxmlnode_1_1_c_xml_node_1_1_exception.html#a283529e443ec0ea3cf5a4b15ffe4550c":[0,0,1,0,2,10],
 "classxmlnode_1_1_c_xml_node_1_1_exception.html#a29271ad0ec50958663200f60aaae97b2":[0,0,1,0,2,5],
 "classxmlnode_1_1_c_xml_node_1_1_exception.html#a40c0f5e49e54cd97c4643c71fbc34014":[0,0,1,0,2,6],
@@ -37,5 +41,5 @@ var NAVTREEINDEX1 =
 "hierarchy.html":[0,1],
 "index.html":[],
 "pages.html":[],
-"resource_8h_source.html":[1,0,0,18]
+"resource_8h_source.html":[1,0,0,19]
 };

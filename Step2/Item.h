@@ -43,7 +43,7 @@ public:
 
 	/** The the width of the item
 	* \returns width in pixels */
-	int GetWidth(){ return mItemImage->GetWidth() ; };
+	int GetWidth(){ return mItemImage->GetWidth(); };
 
 	/** The the height of the item
 	* \returns height in pixels */
@@ -84,7 +84,7 @@ public:
 	virtual void Accept(CItemVisitor *visitor){};
 
 protected:
-	
+
 	std::unique_ptr<Gdiplus::Bitmap> mItemImage; ///< member that loads Fish Image 
 
 private:
@@ -95,5 +95,5 @@ private:
 	double   mX = 0;     ///< X location for the center of the item
 	double   mY = 0;     ///< Y location for the center of the item
 	bool mMirror = false;   ///< True mirrors the fish image
-	
+
 };

@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('_fish_8h_source.html','');});
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_item_8h.html">Item.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;ItemVisitor.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_item_visitor_8h.html">ItemVisitor.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> MaleChance = 0.5;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> minDaysAfterSex = 3;</div>
@@ -161,13 +161,14 @@ $(document).ready(function(){initNavTree('_fish_8h_source.html','');});
 <div class="ttc" id="class_c_fish_html_a1b59bb6c006de537a96a2212044d6c4b"><div class="ttname"><a href="class_c_fish.html#a1b59bb6c006de537a96a2212044d6c4b">CFish::mSpeedY</a></div><div class="ttdeci">double mSpeedY</div><div class="ttdoc">Fish speed in the Y direction. </div><div class="ttdef"><b>Definition:</b> Fish.h:56</div></div>
 <div class="ttc" id="class_c_fish_html_a20ec33052458fbdc13b5ac1737e01489"><div class="ttname"><a href="class_c_fish.html#a20ec33052458fbdc13b5ac1737e01489">CFish::mDaysSinceSex</a></div><div class="ttdeci">int mDaysSinceSex</div><div class="ttdoc">Days since had sex. </div><div class="ttdef"><b>Definition:</b> Fish.h:62</div></div>
 <div class="ttc" id="class_c_fish_html_a9a03082632cbbcb2f4b56c8dfacd33ea"><div class="ttname"><a href="class_c_fish.html#a9a03082632cbbcb2f4b56c8dfacd33ea">CFish::mSpeedX</a></div><div class="ttdeci">double mSpeedX</div><div class="ttdoc">Fish speed in the X direction. </div><div class="ttdef"><b>Definition:</b> Fish.h:53</div></div>
+<div class="ttc" id="_item_visitor_8h_html"><div class="ttname"><a href="_item_visitor_8h.html">ItemVisitor.h</a></div><div class="ttdoc">Item Visitor File Implementation. </div></div>
 <div class="ttc" id="class_c_fish_html_ab578a601ffc006a3b513ce320c809b6c"><div class="ttname"><a href="class_c_fish.html#ab578a601ffc006a3b513ce320c809b6c">CFish::SetGender</a></div><div class="ttdeci">void SetGender(Gender gender)</div><div class="ttdoc">Set Gender. </div><div class="ttdef"><b>Definition:</b> Fish.h:34</div></div>
 <div class="ttc" id="class_c_fish_html_a8b11af6d24a49fb051f1b6a717bbc1db"><div class="ttname"><a href="class_c_fish.html#a8b11af6d24a49fb051f1b6a717bbc1db">CFish::mPregnantDay</a></div><div class="ttdeci">int mPregnantDay</div><div class="ttdoc">Days since had sex. </div><div class="ttdef"><b>Definition:</b> Fish.h:68</div></div>
 <div class="ttc" id="class_c_fish_html_a74822d121650b0153641f094eb41efa9"><div class="ttname"><a href="class_c_fish.html#a74822d121650b0153641f094eb41efa9">CFish::Gender</a></div><div class="ttdeci">Gender</div><div class="ttdoc">Type Gender. </div><div class="ttdef"><b>Definition:</b> Fish.h:20</div></div>
 <div class="ttc" id="class_c_fish_html_a1f32288b28d3c1f186bd51cf8ac71aeb"><div class="ttname"><a href="class_c_fish.html#a1f32288b28d3c1f186bd51cf8ac71aeb">CFish::Update</a></div><div class="ttdeci">void Update(double elapsed)</div><div class="ttdoc">Handle updates in time of our fish. </div><div class="ttdef"><b>Definition:</b> Fish.cpp:58</div></div>
 <div class="ttc" id="class_c_fish_html_a417c40c2383df65aa19c9574522fe6b5"><div class="ttname"><a href="class_c_fish.html#a417c40c2383df65aa19c9574522fe6b5">CFish::IsPregnant</a></div><div class="ttdeci">bool IsPregnant()</div><div class="ttdoc">Check if it is Pregnant. </div><div class="ttdef"><b>Definition:</b> Fish.h:42</div></div>
 <div class="ttc" id="class_c_fish_html_a71627180ce1451a2245d11b815230304"><div class="ttname"><a href="class_c_fish.html#a71627180ce1451a2245d11b815230304">CFish::SetDaysSinceSex</a></div><div class="ttdeci">void SetDaysSinceSex(int days)</div><div class="ttdoc">Set Days Since Sex. </div><div class="ttdef"><b>Definition:</b> Fish.h:38</div></div>
-<div class="ttc" id="class_c_item_visitor_html"><div class="ttname"><a href="class_c_item_visitor.html">CItemVisitor</a></div><div class="ttdoc">Item Visitor Class Implementation. </div><div class="ttdef"><b>Definition:</b> ItemVisitor.h:12</div></div>
+<div class="ttc" id="class_c_item_visitor_html"><div class="ttname"><a href="class_c_item_visitor.html">CItemVisitor</a></div><div class="ttdoc">Item Visitor Class Implementation. </div><div class="ttdef"><b>Definition:</b> ItemVisitor.h:20</div></div>
 <div class="ttc" id="class_c_item_html"><div class="ttname"><a href="class_c_item.html">CItem</a></div><div class="ttdoc">Base class for any item in our aquarium. </div><div class="ttdef"><b>Definition:</b> Item.h:22</div></div>
 <div class="ttc" id="class_c_fish_html_ac4c190f887382bb976a3bca156010d60"><div class="ttname"><a href="class_c_fish.html#ac4c190f887382bb976a3bca156010d60">CFish::CFish</a></div><div class="ttdeci">CFish()=delete</div><div class="ttdoc">Default constructor (disabled) </div></div>
 <div class="ttc" id="class_c_fish_html_a52edbe4d6a7dc9f181e319d636c0ae74"><div class="ttname"><a href="class_c_fish.html#a52edbe4d6a7dc9f181e319d636c0ae74">CFish::mPregnant</a></div><div class="ttdeci">bool mPregnant</div><div class="ttdoc">is Pregnant </div><div class="ttdef"><b>Definition:</b> Fish.h:65</div></div>
@@ -185,7 +186,7 @@ $(document).ready(function(){initNavTree('_fish_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_e51582f0a5b802603ba717b8c60bb6a2.html">Step2</a></li><li class="navelem"><b>Fish.h</b></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:01:44 for CSE 335 Project by
+    <li class="footer">Generated on Tue Sep 30 2014 18:30:36 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

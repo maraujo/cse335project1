@@ -137,9 +137,8 @@ Public Member Functions</h2></td></tr>
 &lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_fish_cat.html#a1cc19c4866103099300b49266517954b">XmlSave</a> (const std::shared_ptr&lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt; &amp;node) override</td></tr>
 <tr class="memdesc:a1cc19c4866103099300b49266517954b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save this item to an XML node.  <a href="#a1cc19c4866103099300b49266517954b">More...</a><br /></td></tr>
 <tr class="separator:a1cc19c4866103099300b49266517954b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d495814178f793ebdc4943fd95b755"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40d495814178f793ebdc4943fd95b755"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_fish_cat.html#a40d495814178f793ebdc4943fd95b755">Accept</a> (<a class="el" href="class_c_item_visitor.html">CItemVisitor</a> *visitor) override</td></tr>
-<tr class="memdesc:a40d495814178f793ebdc4943fd95b755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept Visitor. <br /></td></tr>
+<tr class="memitem:a40d495814178f793ebdc4943fd95b755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_fish_cat.html#a40d495814178f793ebdc4943fd95b755">Accept</a> (<a class="el" href="class_c_item_visitor.html">CItemVisitor</a> *visitor) override</td></tr>
+<tr class="memdesc:a40d495814178f793ebdc4943fd95b755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept a visitor.  <a href="#a40d495814178f793ebdc4943fd95b755">More...</a><br /></td></tr>
 <tr class="separator:a40d495814178f793ebdc4943fd95b755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af78d897b8985ca6a850720a9e9c5b15f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af78d897b8985ca6a850720a9e9c5b15f"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_fish_cat.html#af78d897b8985ca6a850720a9e9c5b15f">PassTime</a> () override</td></tr>
@@ -301,6 +300,40 @@ std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" vali
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a40d495814178f793ebdc4943fd95b755"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CFishCat::Accept </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c_item_visitor.html">CItemVisitor</a> *&#160;</td>
+          <td class="paramname"><em>visitor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accept a visitor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitor</td><td>The visitor we accept </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_c_fish.html#a5ddb5c16bc3f2ea2b99fd64e37d6b328">CFish</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a1cc19c4866103099300b49266517954b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -346,7 +379,7 @@ std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" vali
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_fish_cat.html">CFishCat</a></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:01:44 for CSE 335 Project by
+    <li class="footer">Generated on Tue Sep 30 2014 18:30:37 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
