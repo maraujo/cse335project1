@@ -18,7 +18,7 @@ public:
 
 	/** \brief Accept a visitor
 	* \param visitor The visitor we accept */
-	virtual void Accept(CItemVisitor *visitor);
+	virtual void Accept(CItemVisitor *visitor) override{};
 protected:
 	/// Fish speed in the X direction
 	double mSpeedX;

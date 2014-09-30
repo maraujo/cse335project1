@@ -63,7 +63,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>StdAfx;Aquarium;Item;FishBeta;FishAngel;Fish;FishCat;DecorTreasure;XmlNode;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>StdAfx;Aquarium;Item;FishBeta;FishAngel;Fish;FishCat;DecorTreasure;XmlNode;ItemVisitor;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
