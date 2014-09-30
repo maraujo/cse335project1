@@ -26,6 +26,7 @@ using namespace xmlnode;
  * the preferred method is to use the static member functions
  * OpenDocument and CreateDocument.
  *
+ *
  */
 CXmlNode::CXmlNode()
 {
