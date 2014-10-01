@@ -103,6 +103,7 @@
     <ClInclude Include="Breeding.h" />
     <ClInclude Include="ChildView.h" />
     <ClInclude Include="DecorTreasure.h" />
+    <ClInclude Include="FeedFish.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="FishAngel.h" />
     <ClInclude Include="FishBeta.h" />
@@ -121,6 +122,7 @@
     <ClCompile Include="Breeding.cpp" />
     <ClCompile Include="ChildView.cpp" />
     <ClCompile Include="DecorTreasure.cpp" />
+    <ClCompile Include="FeedFish.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="FishAngel.cpp" />
     <ClCompile Include="FishBeta.cpp" />

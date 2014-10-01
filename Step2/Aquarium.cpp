@@ -301,6 +301,7 @@ void CAquarium::Update(double elapsed)
 		breedVisitor.CheckAngelsHadSex();
 		breedVisitor.CheckCatsHadSex();
 		breedVisitor.passDayFishes();
+		CheckFishFood();
 
 	}
 
@@ -318,5 +319,29 @@ void CAquarium::Accept(CItemVisitor *visitor)
 	for (auto item : mItems)
 	{
 		item->Accept(visitor);
+	}
+}
+
+
+/**
+ * \brief Check for food level and kills fish if below the level
+ */
+void CAquarium::CheckFishFood()
+{
+	std::vector<std::shared_ptr<CItem>> ItemsToDelete;
+	for (auto item : mItems)
+	{
+		if (item->CheckFood() == false)
+		{
+			ItemsToDelete.push_back(item);
+		}
+		else
+		{
+			item->Hunger();
+		}
+	}
+	for (auto DelItem : ItemsToDelete)
+	{
+		DeleteItem(DelItem);
 	}
 }

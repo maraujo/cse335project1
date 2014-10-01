@@ -60,4 +60,5 @@ public:
 			mDaysSinceSex++;
 		}
 	}
+	void ResetDaysSinceFed() { mDaysSinceFed = 0; }
 };

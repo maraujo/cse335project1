@@ -83,6 +83,9 @@ public:
 	* \param visitor The visitor we accept */
 	virtual void Accept(CItemVisitor *visitor){};
 
+	virtual bool CheckFood() = 0;
+	virtual void Hunger() = 0;
+
 protected:
 
 	std::unique_ptr<Gdiplus::Bitmap> mItemImage; ///< member that loads Fish Image 

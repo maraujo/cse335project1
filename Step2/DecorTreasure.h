@@ -34,5 +34,8 @@ public:
 	/** \brief Accept a visitor
 	* \param visitor The visitor we accept */
 	virtual void Accept(CItemVisitor *visitor) override { visitor->VisitDecorTreasure(this); }
+
+	virtual bool CheckFood() override { return true; };
+	virtual void Hunger() override {};
 };
 

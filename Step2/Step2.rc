@@ -119,6 +119,11 @@ BEGIN
         MENUITEM "&Cat Fish",                   ID_ADDFISH_CATFISH
         MENUITEM "&Tresure",                    ID_ADDFISH_TRESURE
     END
+    POPUP "Care"
+    BEGIN
+        MENUITEM "&Clean",                      ID_CARE_CLEAN
+        MENUITEM "&Feed",                       ID_CARE_FEED
+    END
     POPUP "&Help"
     BEGIN
         MENUITEM "&About Step2...",             ID_APP_ABOUT

@@ -17,6 +17,8 @@ namespace Testing
 		CItemMock(CAquarium *aquarium) : CItem(aquarium, FishBetaImageName) {}
 		virtual void Draw(Gdiplus::Graphics *graphics) {}
 		virtual void Accept(CItemVisitor *visitor) override{}
+		virtual bool CheckFood() override{ return true; }
+		virtual void Hunger() override{}
 	};
 
 

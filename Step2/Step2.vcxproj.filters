@@ -66,6 +66,9 @@
     <ClInclude Include="ItemVisitor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FeedFish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Step2.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ItemVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FeedFish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

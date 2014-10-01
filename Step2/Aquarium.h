@@ -50,6 +50,8 @@ public:
 
 	void Accept(CItemVisitor *visitor);
 
+	void CheckFishFood();
+
 private:
 	std::unique_ptr<Gdiplus::Bitmap> mBackground; ///< Background image to use
 	std::unique_ptr<Gdiplus::Bitmap> mTrashcan;  ///< Trash can image

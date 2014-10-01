@@ -66,5 +66,7 @@ public:
 	afx_msg void OnFileSaveas();
 	afx_msg void OnFileOpen();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnCareFeed();
+	afx_msg void OnCareClean();
 };
 

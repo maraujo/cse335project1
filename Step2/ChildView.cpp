@@ -12,6 +12,7 @@
 #include "Breeding.h"
 #include "DecorTreasure.h"
 #include "ChildView.h"
+#include "FeedFish.h"
 
 
 #ifdef _DEBUG
@@ -59,6 +60,8 @@ BEGIN_MESSAGE_MAP(CChildView, CWnd)
 	ON_COMMAND(ID_FILE_SAVEAS, &CChildView::OnFileSaveas)
 	ON_COMMAND(ID_FILE_OPEN32777, &CChildView::OnFileOpen)
 	ON_WM_TIMER()
+	ON_COMMAND(ID_CARE_FEED, &CChildView::OnCareFeed)
+	ON_COMMAND(ID_CARE_CLEAN, &CChildView::OnCareClean)
 END_MESSAGE_MAP()
 
 
@@ -322,3 +325,19 @@ void CChildView::ToogleTrashcan()
 	 Invalidate();
 	 CWnd::OnTimer(nIDEvent);
  }
+
+
+ /**
+  * \brief Feeds all the fish
+  */
+ void CChildView::OnCareFeed()
+ {
+	 CFeedFish visitor;
+	 mAquarium.Accept(&visitor);
+ }
+
+
+  void CChildView::OnCareClean()
+  {
+	  // TODO: Add your command handler code here
+  }

@@ -34,6 +34,10 @@ CFishBeta::CFishBeta(CAquarium *aquarium) : CFish(aquarium,FishBetaImageName)
 	else{
 		mGender = FEMALE;
 	}
+	///Days without food
+	mFood = 20;
+	///Days since food
+	mDaysSinceFed = 0;
 }
 
 /**

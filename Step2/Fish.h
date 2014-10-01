@@ -48,6 +48,20 @@ public:
 	/// Pass time each second
 	virtual void CFish::PassTime(){}
 
+	virtual bool CheckFood() override 
+	{
+		if (mFood > mDaysSinceFed)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	virtual void Hunger() override { mDaysSinceFed++; }
+
 protected:
 	/// Fish speed in the X direction
 	double mSpeedX;
@@ -67,7 +81,10 @@ protected:
 	/// Days since had sex
 	int mPregnantDay;
 
+	///Max days without food
+	int mFood;
 
-
+	///Days since fed
+	int mDaysSinceFed;
 };
 

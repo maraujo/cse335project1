@@ -34,4 +34,5 @@ public:
 	virtual void Accept(CItemVisitor *visitor) override { visitor->VisitAngel(this);  }
 	
 	virtual void CFishAngel::PassTime() override;
+	void ResetDaysSinceFed() { mDaysSinceFed = 0; }
 };

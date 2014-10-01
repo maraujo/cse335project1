@@ -41,6 +41,7 @@ CItem(aquarium, filename)
 		mSpeedY = -1*((double)rand() / RAND_MAX) * MaxSpeedY;
 		SetGender(FEMALE);
 	}
+	mDaysSinceFed = 0;
 
 }
 
