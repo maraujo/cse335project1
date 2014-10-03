@@ -63,6 +63,9 @@ public:
 	* \param y Y location on the aquarium to test
 	* \return true if clicked on */
 	bool CItem::HitTest(int x, int y);
+
+	/** \brief Load the attributes for an item node.
+	 * \param node The Xml node we are loading the item from */
 	virtual void CItem::XmlLoad(const std::shared_ptr<xmlnode::CXmlNode> &node);
 
 	virtual std::shared_ptr<xmlnode::CXmlNode> CItem::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node);
@@ -86,6 +89,11 @@ public:
 	virtual bool CheckFood() = 0;
 	virtual void Hunger() = 0;
 
+	/** The directory were the Sparty treasure chest images are stored */
+	static const std::wstring ImagesDirectory;
+
+	void SetImage(const std::wstring &file);
+
 protected:
 
 	std::unique_ptr<Gdiplus::Bitmap> mItemImage; ///< member that loads Fish Image 
@@ -97,6 +105,6 @@ private:
 	// Item location in the aquarium
 	double   mX = 0;     ///< X location for the center of the item
 	double   mY = 0;     ///< Y location for the center of the item
-	bool mMirror = false;   ///< True mirrors the fish image
 
+	bool mMirror = false;   ///< True mirrors the fish image
 };

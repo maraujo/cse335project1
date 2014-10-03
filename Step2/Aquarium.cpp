@@ -13,12 +13,18 @@
 #include "Breeding.h"
 #include "DecorTreasure.h"
 #include "XmlNode.h"
+#include "DecorSpartyTreasure.h"
+#include "AirBubbles.h"
+
+#include <algorithm>
 
 using namespace std;
 using namespace Gdiplus;
 using namespace xmlnode;
 
+/// Defines TrashCanWidth as a constant
 const int TrashCanWidth = 51;
+/// Defines TrashCanHeight as a constant
 const int TrashCanHeight = 70;
 /// FrameCounter
 int frameCount = 0;
@@ -29,13 +35,17 @@ int frameCount = 0;
 CAquarium::CAquarium()
 {
 	mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/background1.png"));
-	mTrashcan = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/trashcan.png"));
-	mTrashcanActive = false;
+	
 	if (mBackground->GetLastStatus() != Ok)
 	{
 		AfxMessageBox(L"Failed to open images/background1.png");
 	}
 
+	mTrashcan = unique_ptr<Gdiplus::Bitmap>(Bitmap::FromFile(L"images/trashcan.png"));
+	if (mTrashcan->GetLastStatus() != Ok)
+	{
+		AfxMessageBox(L"Failed to open images/trashcan.png");
+	}
 }
 
 
@@ -227,7 +237,7 @@ void CAquarium::Load(const std::wstring &filename)
 */
 void CAquarium::Clear()
 {
-	// TO DO...
+
 	while (mItems.size() != 0)
 	{
 		mItems.pop_back();
@@ -276,6 +286,14 @@ void CAquarium::XmlItem(const std::shared_ptr<xmlnode::CXmlNode> &node)
 	{
 		item = make_shared<CFishAngel>(this);
 	}
+	else if (type == L"sparty-treasure-chest")
+	{
+		item = make_shared<CDecorSpartyTreasure>(this);
+	}
+	else if (type == L"air-bubbles")
+	{
+		item = make_shared<CAirBubbles>(this);
+	}
 
 	if (item != nullptr)
 	{
@@ -308,7 +326,24 @@ void CAquarium::Update(double elapsed)
 	for (auto item : mItems)
 	{
 		item->Update(elapsed);
+		if (item->GetY() < 0)
+		{
+			mItemsDelete.push_back(item);
+		}
 	}
+	
+	for (auto item : mItemsAdd)
+	{
+		mItems.push_back(item);
+	}
+
+	for (auto item : mItemsDelete)
+	{
+		DeleteItem(item);
+	}
+
+	mItemsAdd.clear();
+	mItemsDelete.clear();
 }
 
 /** \brief Accept a visitor for the collection
@@ -344,4 +379,33 @@ void CAquarium::CheckFishFood()
 	{
 		DeleteItem(DelItem);
 	}
+}
+
+/**
+ * \brief States if mItems is empty or not
+ *
+ * \returns Boolean stating whether mItems is empty or not
+ */
+bool CAquarium::IsEmpty()
+{
+	bool result;
+	result = mItems.empty();
+
+	return result;
+}
+
+/** \brief Add an item to vector to be added to aquarium
+ * \param item New item to add
+ */
+void CAquarium::AddBubbles(std::shared_ptr<CItem> item)
+{
+	mItemsAdd.push_back(item);
+}
+
+/** \brief Add an item to vector to be deleted from aquarium
+ * \param item New item to delete
+ */
+void CAquarium::DeleteBubbles(std::shared_ptr<CItem> item)
+{
+	mItemsDelete.push_back(item);
 }

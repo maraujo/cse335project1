@@ -13,6 +13,8 @@
 #include "DecorTreasure.h"
 #include "ChildView.h"
 #include "FeedFish.h"
+#include "AirBubbles.h"
+#include "DecorSpartyTreasure.h"
 
 
 #ifdef _DEBUG
@@ -56,12 +58,13 @@ BEGIN_MESSAGE_MAP(CChildView, CWnd)
 	ON_COMMAND(ID_ADDFISH_ANGELFISH, &CChildView::OnAddfishAngelfish)
 	ON_COMMAND(ID_ADDFISH_CATFISH, &CChildView::OnAddfishCatfish)
 	ON_COMMAND(ID_FILE_TRASHCAN, &CChildView::ToogleTrashcan)
-	ON_COMMAND(ID_ADDFISH_TRESURE, &CChildView::OnAddTresure)
 	ON_COMMAND(ID_FILE_SAVEAS, &CChildView::OnFileSaveas)
 	ON_COMMAND(ID_FILE_OPEN32777, &CChildView::OnFileOpen)
 	ON_WM_TIMER()
 	ON_COMMAND(ID_CARE_FEED, &CChildView::OnCareFeed)
 	ON_COMMAND(ID_CARE_CLEAN, &CChildView::OnCareClean)
+	ON_COMMAND(ID_ADDDECOR_TREASURECHEST, &CChildView::OnAdddecorTreasurechest)
+	ON_COMMAND(ID_ADDDECOR_SPARTYTREASURECHEST, &CChildView::OnAdddecorSpartytreasurechest)
 END_MESSAGE_MAP()
 
 
@@ -263,20 +266,6 @@ void CChildView::ToogleTrashcan()
 	}
 }
 
-/**
-* \brief Add Tresure to aquarium
-*/
- void CChildView::OnAddTresure()
- {
-	 // TODO: Add your command handler code here
-	 // TODO: Add your command handler code here
-	 // TODO: Add your command handler code here
-	 auto tresure = make_shared<CDecorTreasure>(&mAquarium);
-	 tresure->SetLocation(InitialX, InitialY);
-	 mAquarium.Add(tresure);
-	 Invalidate();
- }
-
  /**
  * \brief Behaviour when hit Save As at Menu
  */
@@ -340,4 +329,26 @@ void CChildView::ToogleTrashcan()
   void CChildView::OnCareClean()
   {
 	  // TODO: Add your command handler code here
+  }
+
+  /**
+   * \brief Called when treasure chest is added
+   */
+  void CChildView::OnAdddecorTreasurechest()
+  {
+	  auto decor = make_shared<CDecorTreasure>(&mAquarium);
+	  decor->SetLocation(InitialX, InitialY);
+	  mAquarium.Add(decor);
+	  Invalidate();
+  }
+
+  /**
+   * \brief Called when Sparty treasure chest is added
+   */
+  void CChildView::OnAdddecorSpartytreasurechest()
+  {
+	  auto decor = make_shared<CDecorSpartyTreasure>(&mAquarium);
+	  decor->SetLocation(InitialX, InitialY);
+	  mAquarium.Add(decor);
+	  Invalidate();
   }

@@ -14,6 +14,9 @@
 using namespace Gdiplus;
 using namespace std;
 
+/// The directory containing the file images
+const std::wstring CItem::ImagesDirectory = L"images/";
+
 /** \brief Constructor
 * \param aquarium The aquarium this item is a member of
 * \param filename The file name of the image of this item
@@ -127,5 +130,29 @@ void CItem::Draw(Gdiplus::Graphics *graphics)
 		graphics->DrawImage(mItemImage.get(),
 			float(GetX() - wid / 2), float(GetY() - hit / 2),
 			(float)mItemImage->GetWidth(), (float)mItemImage->GetHeight());
+	}
+}
+
+/**
+ * \brief Set the image file to draw
+ * \param file The base filename. Blank files are allowed
+ */
+void CItem::SetImage(const std::wstring &file)
+{
+	if (!file.empty())
+	{
+		wstring filename = ImagesDirectory + file;
+		mItemImage = unique_ptr<Bitmap>(Bitmap::FromFile(filename.c_str()));
+		if (mItemImage->GetLastStatus() != Ok)
+		{
+			wstring msg(L"Failed to open ");
+			msg += filename;
+			AfxMessageBox(msg.c_str());
+			return;
+		}
+	}
+	else
+	{
+		mItemImage.release();
 	}
 }

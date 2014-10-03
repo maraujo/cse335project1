@@ -1,5 +1,5 @@
 /**
-* \file ChildView.h
+* \file Aquarium.h
 *
 * \author Matheus Araujo
 *
@@ -26,6 +26,7 @@ public:
 	CAquarium();
 	virtual ~CAquarium();
 
+	/// Member functions of CAquarium
 	void OnDraw(Gdiplus::Graphics *graphics);
 	void CAquarium::Add(std::shared_ptr<CItem> item);
 	std::shared_ptr<CItem> CAquarium::HitTest(int x, int y);
@@ -38,7 +39,11 @@ public:
 	void CAquarium::Load(const std::wstring &filename);
 	void CAquarium::Clear();
 	int CAquarium::NumItems();
+	void XmlItem(const std::shared_ptr<xmlnode::CXmlNode> &node);
 	void CAquarium::Update(double elapsed);
+	bool IsEmpty();
+	void AddBubbles(std::shared_ptr<CItem> item);
+	void DeleteBubbles(std::shared_ptr<CItem> item);
 
 	/// \brief Get the width of the aquarium
 	/// \returns Aquarium width
@@ -55,11 +60,15 @@ public:
 private:
 	std::unique_ptr<Gdiplus::Bitmap> mBackground; ///< Background image to use
 	std::unique_ptr<Gdiplus::Bitmap> mTrashcan;  ///< Trash can image
-	bool mTrashcanActive; ///< Trashcan Status
+	bool mTrashcanActive = false; ///< Trashcan Status
 	/// All of the items to populate our aquarium
 	std::vector<std::shared_ptr<CItem> > mItems;
-	void CAquarium::XmlItem(const std::shared_ptr<xmlnode::CXmlNode> &node);
 	
+	/// Bubbles to be added
+	std::vector<std::shared_ptr<CItem> > mItemsAdd;
+
+	/// Bubbles to be deleted
+	std::vector<std::shared_ptr<CItem> > mItemsDelete;
 	
 };
 
