@@ -328,7 +328,8 @@ void CChildView::ToogleTrashcan()
 
   void CChildView::OnCareClean()
   {
-	  // TODO: Add your command handler code here
+	  int temp = mAquarium.GetTankMaxCleanliness();
+	  mAquarium.SetTankCleanliness(temp);
   }
 
   /**

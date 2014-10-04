@@ -34,11 +34,11 @@ int frameCount = 0;
 */
 CAquarium::CAquarium()
 {
-	mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/background1.png"));
+	mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/backgroundW.png"));
 	
 	if (mBackground->GetLastStatus() != Ok)
 	{
-		AfxMessageBox(L"Failed to open images/background1.png");
+		AfxMessageBox(L"Failed to open images/backgroundW.png");
 	}
 
 	mTrashcan = unique_ptr<Gdiplus::Bitmap>(Bitmap::FromFile(L"images/trashcan.png"));
@@ -320,7 +320,7 @@ void CAquarium::Update(double elapsed)
 		breedVisitor.CheckCatsHadSex();
 		breedVisitor.passDayFishes();
 		CheckFishFood();
-
+		DirtyTank();
 	}
 
 	for (auto item : mItems)
@@ -408,4 +408,49 @@ void CAquarium::AddBubbles(std::shared_ptr<CItem> item)
 void CAquarium::DeleteBubbles(std::shared_ptr<CItem> item)
 {
 	mItemsDelete.push_back(item);
+}
+
+
+void CAquarium::DirtyTank()
+{
+	if (mTankCleanliness <= 40 && mTankCleanliness >= 31)
+	{
+		mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/backgroundW.png"));
+
+		if (mBackground->GetLastStatus() != Ok)
+		{
+			AfxMessageBox(L"Failed to open images/backgroundW.png");
+		}
+	}
+	if (mTankCleanliness <= 30 && mTankCleanliness >= 21)
+	{
+		mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/backgroundW1.png"));
+
+		if (mBackground->GetLastStatus() != Ok)
+		{
+			AfxMessageBox(L"Failed to open images/backgroundW1.png");
+		}
+	}
+
+	if (mTankCleanliness <= 20 && mTankCleanliness >= 11)
+	{
+		mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/backgroundW2.png"));
+
+		if (mBackground->GetLastStatus() != Ok)
+		{
+			AfxMessageBox(L"Failed to open images/backgroundW2.png");
+		}
+	}
+	if (mTankCleanliness <= 10)
+	{
+		mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/backgroundW3.png"));
+
+		if (mBackground->GetLastStatus() != Ok)
+		{
+			AfxMessageBox(L"Failed to open images/backgroundW3.png");
+		}
+		mTankCleanliness = 1;
+	}
+
+	mTankCleanliness--;
 }

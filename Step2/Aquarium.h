@@ -56,6 +56,9 @@ public:
 	void Accept(CItemVisitor *visitor);
 
 	void CheckFishFood();
+	void DirtyTank();
+	void SetTankCleanliness(int Max){ mTankCleanliness = Max; }
+	int GetTankMaxCleanliness(){ return mTankMaxCleanliness; }
 
 private:
 	std::unique_ptr<Gdiplus::Bitmap> mBackground; ///< Background image to use
@@ -69,6 +72,11 @@ private:
 
 	/// Bubbles to be deleted
 	std::vector<std::shared_ptr<CItem> > mItemsDelete;
+
+	///Max tank cleanliness
+	int mTankMaxCleanliness = 40;
+	///Cleanliness of tank in days left.
+	int mTankCleanliness = 40;
 	
 };
 
