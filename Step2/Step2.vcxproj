@@ -99,9 +99,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AirBubbles.h" />
     <ClInclude Include="Aquarium.h" />
     <ClInclude Include="Breeding.h" />
     <ClInclude Include="ChildView.h" />
+    <ClInclude Include="DecorSpartyTreasure.h" />
     <ClInclude Include="DecorTreasure.h" />
     <ClInclude Include="FeedFish.h" />
     <ClInclude Include="Fish.h" />
@@ -118,9 +120,11 @@
     <ClInclude Include="XmlNode.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AirBubbles.cpp" />
     <ClCompile Include="Aquarium.cpp" />
     <ClCompile Include="Breeding.cpp" />
     <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="DecorSpartyTreasure.cpp" />
     <ClCompile Include="DecorTreasure.cpp" />
     <ClCompile Include="FeedFish.cpp" />
     <ClCompile Include="Fish.cpp" />

@@ -62,11 +62,12 @@ public:
 	afx_msg void OnAddfishAngelfish();
 	afx_msg void OnAddfishCatfish();
 	afx_msg void ToogleTrashcan();
-	afx_msg void OnAddTresure();
 	afx_msg void OnFileSaveas();
 	afx_msg void OnFileOpen();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg void OnCareFeed();
 	afx_msg void OnCareClean();
+	afx_msg void OnAdddecorTreasurechest();
+	afx_msg void OnAdddecorSpartytreasurechest();
 };
 
