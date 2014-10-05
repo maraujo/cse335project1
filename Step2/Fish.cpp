@@ -92,6 +92,13 @@ std::shared_ptr<xmlnode::CXmlNode> CFish::XmlSave(const std::shared_ptr<xmlnode:
 	auto itemNode = CItem::XmlSave(node);
 	itemNode->SetAttribute(L"speedX", mSpeedX);
 	itemNode->SetAttribute(L"speedY", mSpeedY);
+	itemNode->SetAttribute(L"gender", mGender);
+	itemNode->SetAttribute(L"dayssincesex", mDaysSinceSex);
+	itemNode->SetAttribute(L"pregnant", mPregnant);
+	itemNode->SetAttribute(L"pregnantday", mPregnantDay);
+	itemNode->SetAttribute(L"food", mFood);
+	itemNode->SetAttribute(L"dayssincefed", mDaysSinceFed);
+
 	return itemNode;
 }
 
@@ -110,5 +117,9 @@ void CFish::XmlLoad(const std::shared_ptr<xmlnode::CXmlNode> &node)
 	CItem::XmlLoad(node);
 	mSpeedX = node->GetAttributeDoubleValue(L"speedX", 0);
 	mSpeedY = node->GetAttributeDoubleValue(L"speedY", 0);
+	mDaysSinceSex = node->GetAttributeIntValue(L"dayssincesex", 0);
+	mPregnantDay = node->GetAttributeIntValue(L"pregnantday", 0);
+	mFood = node->GetAttributeIntValue(L"food", 0);
+	mDaysSinceFed = node->GetAttributeIntValue(L"dayssincefed", 0);
 	SetMirror(mSpeedX < 0);
 }

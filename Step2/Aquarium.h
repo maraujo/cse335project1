@@ -75,6 +75,7 @@ private:
 
 	///Max tank cleanliness
 	int mTankMaxCleanliness = 40;
+
 	///Cleanliness of tank in days left.
 	int mTankCleanliness = 40;
 	
