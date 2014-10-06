@@ -12,11 +12,13 @@
 
 #include "Item.h"
 
-
-class CDecorSpartyTreasure :
-	public CItem
+/**
+ * \brief class for air bubbles released from treasure chest
+ */
+class CDecorSpartyTreasure : public CItem
 {
 public:
+	/// \brief constructor that adds treasure chest to the aquarium
 	CDecorSpartyTreasure(CAquarium *aquarium);
 
 	/// \brief Default constructor (disabled)
@@ -32,8 +34,9 @@ public:
 	virtual std::shared_ptr<xmlnode::CXmlNode> XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
 
 	virtual void XmlLoad(const std::shared_ptr<xmlnode::CXmlNode> &node) override;
-
+	/// \brief check function \returns false
 	bool CheckFood() { return 1; }
+	/// \brief check if hungry (does nothing)
 	void Hunger() {};
 
 private:

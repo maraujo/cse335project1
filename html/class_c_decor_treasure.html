@@ -139,6 +139,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a52a7c91150632f8005040b7859fe2aef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_decor_treasure.html#a52a7c91150632f8005040b7859fe2aef">Accept</a> (<a class="el" href="class_c_item_visitor.html">CItemVisitor</a> *visitor) override</td></tr>
 <tr class="memdesc:a52a7c91150632f8005040b7859fe2aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept a visitor.  <a href="#a52a7c91150632f8005040b7859fe2aef">More...</a><br /></td></tr>
 <tr class="separator:a52a7c91150632f8005040b7859fe2aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248a1a3e63c54246998e66327388d0b6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_decor_treasure.html#a248a1a3e63c54246998e66327388d0b6">CheckFood</a> () override</td></tr>
+<tr class="memdesc:a248a1a3e63c54246998e66327388d0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">check function  <a href="#a248a1a3e63c54246998e66327388d0b6">More...</a><br /></td></tr>
+<tr class="separator:a248a1a3e63c54246998e66327388d0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88dfed007118cb363346c27c983203cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88dfed007118cb363346c27c983203cd"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_decor_treasure.html#a88dfed007118cb363346c27c983203cd">Hunger</a> () override</td></tr>
+<tr class="memdesc:a88dfed007118cb363346c27c983203cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if hungry (does nothing) <br /></td></tr>
+<tr class="separator:a88dfed007118cb363346c27c983203cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_c_item"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_c_item')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_c_item.html">CItem</a></td></tr>
 <tr class="memitem:ac2ea847c008cf8d1de92c870c8f8262f inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2ea847c008cf8d1de92c870c8f8262f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#ac2ea847c008cf8d1de92c870c8f8262f">CItem</a> ()=delete</td></tr>
@@ -169,6 +176,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memdesc:ab3ffe07990fd2dec1e5cb65ad8ede7a4 inherit pub_methods_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test this item to see if it has been clicked on.  <a href="#ab3ffe07990fd2dec1e5cb65ad8ede7a4">More...</a><br /></td></tr>
 <tr class="separator:ab3ffe07990fd2dec1e5cb65ad8ede7a4 inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0bad7d47a01ff133734b5498f9ca3bb inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#ad0bad7d47a01ff133734b5498f9ca3bb">XmlLoad</a> (const std::shared_ptr&lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt; &amp;node)</td></tr>
+<tr class="memdesc:ad0bad7d47a01ff133734b5498f9ca3bb inherit pub_methods_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the attributes for an item node.  <a href="#ad0bad7d47a01ff133734b5498f9ca3bb">More...</a><br /></td></tr>
 <tr class="separator:ad0bad7d47a01ff133734b5498f9ca3bb inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e88df0b5e12a93941dcec378797d0fe inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a0e88df0b5e12a93941dcec378797d0fe">Update</a> (double elapsed)</td></tr>
 <tr class="memdesc:a0e88df0b5e12a93941dcec378797d0fe inherit pub_methods_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle updates for animation.  <a href="#a0e88df0b5e12a93941dcec378797d0fe">More...</a><br /></td></tr>
@@ -179,9 +187,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a8718f7e56783f5c974fd70b934e4fb79 inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a8718f7e56783f5c974fd70b934e4fb79">SetMirror</a> (bool m)</td></tr>
 <tr class="memdesc:a8718f7e56783f5c974fd70b934e4fb79 inherit pub_methods_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mirror status.  <a href="#a8718f7e56783f5c974fd70b934e4fb79">More...</a><br /></td></tr>
 <tr class="separator:a8718f7e56783f5c974fd70b934e4fb79 inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ad08a33242b24cc14f2702a3c153111 inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a7ad08a33242b24cc14f2702a3c153111">SetImage</a> (const std::wstring &amp;file)</td></tr>
+<tr class="memdesc:a7ad08a33242b24cc14f2702a3c153111 inherit pub_methods_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the image file to draw.  <a href="#a7ad08a33242b24cc14f2702a3c153111">More...</a><br /></td></tr>
+<tr class="separator:a7ad08a33242b24cc14f2702a3c153111 inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_class_c_item"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_c_item')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_c_item.html">CItem</a></td></tr>
+<tr class="memitem:a0e1bbd641657d482521faced06a93361 inherit pub_static_attribs_class_c_item"><td class="memItemLeft" align="right" valign="top">static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a0e1bbd641657d482521faced06a93361">ImagesDirectory</a> = L&quot;images/&quot;</td></tr>
+<tr class="memdesc:a0e1bbd641657d482521faced06a93361 inherit pub_static_attribs_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">The directory containing the file images.  <a href="#a0e1bbd641657d482521faced06a93361">More...</a><br /></td></tr>
+<tr class="separator:a0e1bbd641657d482521faced06a93361 inherit pub_static_attribs_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_c_item"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_c_item')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_c_item.html">CItem</a></td></tr>
 <tr class="memitem:a0fa1b458895cd1e94f787a86b6399d5a inherit pro_attribs_class_c_item"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fa1b458895cd1e94f787a86b6399d5a"></a>
 std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a0fa1b458895cd1e94f787a86b6399d5a">mItemImage</a></td></tr>
@@ -245,6 +260,34 @@ std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" vali
 </dl>
 
 <p>Reimplemented from <a class="el" href="class_c_item.html#acce2ebffcd0c34ec60e69da1f97f3fbe">CItem</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a248a1a3e63c54246998e66327388d0b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool CDecorTreasure::CheckFood </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check function </p>
+<dl class="section return"><dt>Returns</dt><dd>false </dd></dl>
+
+<p>Implements <a class="el" href="class_c_item.html#a6c4167d6d6d76eedcdf1a1d4a1c95f13">CItem</a>.</p>
 
 </div>
 </div>
@@ -327,7 +370,7 @@ std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" vali
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_decor_treasure.html">CDecorTreasure</a></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:30:36 for CSE 335 Project by
+    <li class="footer">Generated on Sun Oct 5 2014 23:18:24 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

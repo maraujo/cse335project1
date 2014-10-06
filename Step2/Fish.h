@@ -47,7 +47,8 @@ public:
 
 	/// Pass time each second
 	virtual void CFish::PassTime(){}
-
+	/// \brief checks for fish starving
+	/// \returns true if starved false otherwise
 	virtual bool CheckFood() override 
 	{
 		if (mFood > mDaysSinceFed)
@@ -59,7 +60,7 @@ public:
 			return false;
 		}
 	}
-
+	/// \brief increments the days since the fish was fed
 	virtual void Hunger() override { mDaysSinceFed++; }
 
 protected:

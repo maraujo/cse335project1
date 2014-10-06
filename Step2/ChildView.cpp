@@ -325,7 +325,9 @@ void CChildView::ToogleTrashcan()
 	 mAquarium.Accept(&visitor);
  }
 
-
+ /**
+  * \brief resets tank to clean
+  */
   void CChildView::OnCareClean()
   {
 	  int temp = mAquarium.GetTankMaxCleanliness();

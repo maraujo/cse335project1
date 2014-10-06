@@ -1,5 +1,5 @@
 /**
-* \file Bubbles.cpp
+* \file AirBubbles.cpp
 *
 * \author Zachary Walters
 */
@@ -59,6 +59,7 @@ void CAirBubbles::Update(double elapsed)
 
 /** \brief Save this bubbles to an XML node
 * \param node The node we are going to be a child of
+* \returns itemNode to add to XML document
 */
 std::shared_ptr<xmlnode::CXmlNode> CAirBubbles::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node)
 {

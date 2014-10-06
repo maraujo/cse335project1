@@ -31,13 +31,15 @@ public:
 
 	CAirBubbles(CAquarium *aquarium);
 
+	/// \brief check function \returns false
 	bool CheckFood() { return 1; }
+	/// \brief check if hungry (does nothing)
 	void Hunger() {};
 
 private:
-	/// Fish speed in the X direction
+	/// Air Bubble in the X direction
 	double mSpeedX;
 
-	/// Fish speed in the Y direction
+	/// Air Bubble speed in the Y direction
 	double mSpeedY;
 };

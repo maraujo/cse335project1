@@ -33,7 +33,7 @@ public:
 	/** \brief Accept a visitor
 	* \param visitor The visitor we accept */
 	void Accept(CItemVisitor *visitor) override { visitor->VisitCat(this); }
-
+	/// \brief runs a function to increment time and the tests associated with them
 	virtual void CFishCat::PassTime() override {
 		CAquarium *aquarium = GetAquarium();
 		// If fish is pregnant
@@ -60,5 +60,6 @@ public:
 			mDaysSinceSex++;
 		}
 	}
+	/// \brief resets the time since fed back to zero
 	void ResetDaysSinceFed() { mDaysSinceFed = 0; }
 };

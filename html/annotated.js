@@ -6,10 +6,13 @@ var annotated =
     [ "xmlnode", null, [
       [ "CXmlNode", "classxmlnode_1_1_c_xml_node.html", "classxmlnode_1_1_c_xml_node" ]
     ] ],
+    [ "CAirBubbles", "class_c_air_bubbles.html", "class_c_air_bubbles" ],
     [ "CAquarium", "class_c_aquarium.html", "class_c_aquarium" ],
     [ "CBreeding", "class_c_breeding.html", "class_c_breeding" ],
     [ "CChildView", "class_c_child_view.html", "class_c_child_view" ],
+    [ "CDecorSpartyTreasure", "class_c_decor_sparty_treasure.html", "class_c_decor_sparty_treasure" ],
     [ "CDecorTreasure", "class_c_decor_treasure.html", "class_c_decor_treasure" ],
+    [ "CFeedFish", "class_c_feed_fish.html", "class_c_feed_fish" ],
     [ "CFish", "class_c_fish.html", "class_c_fish" ],
     [ "CFishAngel", "class_c_fish_angel.html", "class_c_fish_angel" ],
     [ "CFishBeta", "class_c_fish_beta.html", "class_c_fish_beta" ],

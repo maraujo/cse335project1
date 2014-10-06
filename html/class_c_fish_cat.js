@@ -6,5 +6,6 @@ var class_c_fish_cat =
     [ "~CFishCat", "class_c_fish_cat.html#aaaea91db49bf997685cc4f120210ca6d", null ],
     [ "Accept", "class_c_fish_cat.html#a40d495814178f793ebdc4943fd95b755", null ],
     [ "PassTime", "class_c_fish_cat.html#af78d897b8985ca6a850720a9e9c5b15f", null ],
+    [ "ResetDaysSinceFed", "class_c_fish_cat.html#a76aaa49abd7130129b67f428ba20b080", null ],
     [ "XmlSave", "class_c_fish_cat.html#a1cc19c4866103099300b49266517954b", null ]
 ];

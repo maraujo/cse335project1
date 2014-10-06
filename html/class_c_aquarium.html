@@ -104,7 +104,6 @@ $(document).ready(function(){initNavTree('class_c_aquarium.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_aquarium-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -128,7 +127,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memdesc:ab1baf78dc047af2b8cab8982e1446875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:ab1baf78dc047af2b8cab8982e1446875"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20b4899158d1ba4bc41217630d47e180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a20b4899158d1ba4bc41217630d47e180">OnDraw</a> (Gdiplus::Graphics *graphics)</td></tr>
-<tr class="memdesc:a20b4899158d1ba4bc41217630d47e180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the aquarium.  <a href="#a20b4899158d1ba4bc41217630d47e180">More...</a><br /></td></tr>
+<tr class="memdesc:a20b4899158d1ba4bc41217630d47e180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Member functions of <a class="el" href="class_c_aquarium.html" title="Represents an aquarium. ">CAquarium</a>.  <a href="#a20b4899158d1ba4bc41217630d47e180">More...</a><br /></td></tr>
 <tr class="separator:a20b4899158d1ba4bc41217630d47e180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85063d05c147cf80f54182016fe12d64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a85063d05c147cf80f54182016fe12d64">Add</a> (std::shared_ptr&lt; <a class="el" href="class_c_item.html">CItem</a> &gt; item)</td></tr>
 <tr class="memdesc:a85063d05c147cf80f54182016fe12d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an item to the aquarium.  <a href="#a85063d05c147cf80f54182016fe12d64">More...</a><br /></td></tr>
@@ -164,9 +163,21 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a5f7287804f7844589388baa881b0062c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a5f7287804f7844589388baa881b0062c">NumItems</a> ()</td></tr>
 <tr class="memdesc:a5f7287804f7844589388baa881b0062c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of item in the aquarium;.  <a href="#a5f7287804f7844589388baa881b0062c">More...</a><br /></td></tr>
 <tr class="separator:a5f7287804f7844589388baa881b0062c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0067435ef1bca135ffed750ec8833c3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a0067435ef1bca135ffed750ec8833c3b">XmlItem</a> (const std::shared_ptr&lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt; &amp;node)</td></tr>
+<tr class="memdesc:a0067435ef1bca135ffed750ec8833c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an item node.  <a href="#a0067435ef1bca135ffed750ec8833c3b">More...</a><br /></td></tr>
+<tr class="separator:a0067435ef1bca135ffed750ec8833c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeffc772356405adc8b79beba77c25d0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#aeffc772356405adc8b79beba77c25d0f">Update</a> (double elapsed)</td></tr>
 <tr class="memdesc:aeffc772356405adc8b79beba77c25d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle updates for animation.  <a href="#aeffc772356405adc8b79beba77c25d0f">More...</a><br /></td></tr>
 <tr class="separator:aeffc772356405adc8b79beba77c25d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90cb11eb8c047fe97ae39701d8f64d72"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a90cb11eb8c047fe97ae39701d8f64d72">IsEmpty</a> ()</td></tr>
+<tr class="memdesc:a90cb11eb8c047fe97ae39701d8f64d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">States if mItems is empty or not.  <a href="#a90cb11eb8c047fe97ae39701d8f64d72">More...</a><br /></td></tr>
+<tr class="separator:a90cb11eb8c047fe97ae39701d8f64d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0ff99cf0e35b1de3a749cbb9bc39ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a6f0ff99cf0e35b1de3a749cbb9bc39ae">AddBubbles</a> (std::shared_ptr&lt; <a class="el" href="class_c_item.html">CItem</a> &gt; item)</td></tr>
+<tr class="memdesc:a6f0ff99cf0e35b1de3a749cbb9bc39ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an item to vector to be added to aquarium.  <a href="#a6f0ff99cf0e35b1de3a749cbb9bc39ae">More...</a><br /></td></tr>
+<tr class="separator:a6f0ff99cf0e35b1de3a749cbb9bc39ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af826b6fb88222f18d310c64bfcbcb3db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#af826b6fb88222f18d310c64bfcbcb3db">DeleteBubbles</a> (std::shared_ptr&lt; <a class="el" href="class_c_item.html">CItem</a> &gt; item)</td></tr>
+<tr class="memdesc:af826b6fb88222f18d310c64bfcbcb3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an item to vector to be deleted from aquarium.  <a href="#af826b6fb88222f18d310c64bfcbcb3db">More...</a><br /></td></tr>
+<tr class="separator:af826b6fb88222f18d310c64bfcbcb3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf17321a44774421762e6effa4d79c7d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#acf17321a44774421762e6effa4d79c7d">GetWidth</a> () const </td></tr>
 <tr class="memdesc:acf17321a44774421762e6effa4d79c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the aquarium.  <a href="#acf17321a44774421762e6effa4d79c7d">More...</a><br /></td></tr>
 <tr class="separator:acf17321a44774421762e6effa4d79c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,14 +185,23 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:ab037d20a09f76c634ec9da1d024fa9b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the aquarium.  <a href="#ab037d20a09f76c634ec9da1d024fa9b2">More...</a><br /></td></tr>
 <tr class="separator:ab037d20a09f76c634ec9da1d024fa9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd957a9b3a4cd00a3d2ab4b76ebbd533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#afd957a9b3a4cd00a3d2ab4b76ebbd533">Accept</a> (<a class="el" href="class_c_item_visitor.html">CItemVisitor</a> *visitor)</td></tr>
-<tr class="memdesc:afd957a9b3a4cd00a3d2ab4b76ebbd533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept a visitor for the collection.  <a href="#afd957a9b3a4cd00a3d2ab4b76ebbd533">More...</a><br /></td></tr>
+<tr class="memdesc:afd957a9b3a4cd00a3d2ab4b76ebbd533"><td class="mdescLeft">&#160;</td><td class="mdescRight">accepts visitor function  <a href="#afd957a9b3a4cd00a3d2ab4b76ebbd533">More...</a><br /></td></tr>
 <tr class="separator:afd957a9b3a4cd00a3d2ab4b76ebbd533"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a0067435ef1bca135ffed750ec8833c3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a0067435ef1bca135ffed750ec8833c3b">XmlItem</a> (const std::shared_ptr&lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt; &amp;node)</td></tr>
-<tr class="memdesc:a0067435ef1bca135ffed750ec8833c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an item node.  <a href="#a0067435ef1bca135ffed750ec8833c3b">More...</a><br /></td></tr>
-<tr class="separator:a0067435ef1bca135ffed750ec8833c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7149d1ef541f6bbed798217c3dc7db57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a7149d1ef541f6bbed798217c3dc7db57">CheckFishFood</a> ()</td></tr>
+<tr class="memdesc:a7149d1ef541f6bbed798217c3dc7db57"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks food of fish in aquarium  <a href="#a7149d1ef541f6bbed798217c3dc7db57">More...</a><br /></td></tr>
+<tr class="separator:a7149d1ef541f6bbed798217c3dc7db57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab886187fc9c4179b6701e759bdba1ab7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab886187fc9c4179b6701e759bdba1ab7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#ab886187fc9c4179b6701e759bdba1ab7">DirtyTank</a> ()</td></tr>
+<tr class="memdesc:ab886187fc9c4179b6701e759bdba1ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">slowly starts to add to dirtyness <br /></td></tr>
+<tr class="separator:ab886187fc9c4179b6701e759bdba1ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001b93aed191ea20d5c62930265ffae3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a001b93aed191ea20d5c62930265ffae3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a001b93aed191ea20d5c62930265ffae3">SetTankCleanliness</a> (int Max)</td></tr>
+<tr class="memdesc:a001b93aed191ea20d5c62930265ffae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the cleanliness of the tank back to max <br /></td></tr>
+<tr class="separator:a001b93aed191ea20d5c62930265ffae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47ed99e7dcb34f8812ce97a19eb479ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47ed99e7dcb34f8812ce97a19eb479ae"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a47ed99e7dcb34f8812ce97a19eb479ae">GetTankMaxCleanliness</a> ()</td></tr>
+<tr class="memdesc:a47ed99e7dcb34f8812ce97a19eb479ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the max cleanliness of the tank possible <br /></td></tr>
+<tr class="separator:a47ed99e7dcb34f8812ce97a19eb479ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -193,13 +213,31 @@ std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" vali
 std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a21a808bfa300c4e476e67ba9dfabce4a">mTrashcan</a></td></tr>
 <tr class="memdesc:a21a808bfa300c4e476e67ba9dfabce4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trash can image. <br /></td></tr>
 <tr class="separator:a21a808bfa300c4e476e67ba9dfabce4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a428d19bea2df13a8f86778356c41c469"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a428d19bea2df13a8f86778356c41c469">mTrashcanActive</a></td></tr>
+<tr class="memitem:a428d19bea2df13a8f86778356c41c469"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a428d19bea2df13a8f86778356c41c469">mTrashcanActive</a> = false</td></tr>
 <tr class="separator:a428d19bea2df13a8f86778356c41c469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a2820a5f56f3310664ef510946e2f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93a2820a5f56f3310664ef510946e2f3"></a>
 std::vector&lt; std::shared_ptr<br class="typebreak" />
 &lt; <a class="el" href="class_c_item.html">CItem</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a93a2820a5f56f3310664ef510946e2f3">mItems</a></td></tr>
 <tr class="memdesc:a93a2820a5f56f3310664ef510946e2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">All of the items to populate our aquarium. <br /></td></tr>
 <tr class="separator:a93a2820a5f56f3310664ef510946e2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907646de5ef50255ddb1926e8f3d8574"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a907646de5ef50255ddb1926e8f3d8574"></a>
+std::vector&lt; std::shared_ptr<br class="typebreak" />
+&lt; <a class="el" href="class_c_item.html">CItem</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a907646de5ef50255ddb1926e8f3d8574">mItemsAdd</a></td></tr>
+<tr class="memdesc:a907646de5ef50255ddb1926e8f3d8574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bubbles to be added. <br /></td></tr>
+<tr class="separator:a907646de5ef50255ddb1926e8f3d8574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac089fac45346a76489480a53f6b07c26"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac089fac45346a76489480a53f6b07c26"></a>
+std::vector&lt; std::shared_ptr<br class="typebreak" />
+&lt; <a class="el" href="class_c_item.html">CItem</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#ac089fac45346a76489480a53f6b07c26">mItemsDelete</a></td></tr>
+<tr class="memdesc:ac089fac45346a76489480a53f6b07c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bubbles to be deleted. <br /></td></tr>
+<tr class="separator:ac089fac45346a76489480a53f6b07c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1efe7a721c35fff5647870ce76b52e66"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1efe7a721c35fff5647870ce76b52e66"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#a1efe7a721c35fff5647870ce76b52e66">mTankMaxCleanliness</a> = 40</td></tr>
+<tr class="memdesc:a1efe7a721c35fff5647870ce76b52e66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max tank cleanliness. <br /></td></tr>
+<tr class="separator:a1efe7a721c35fff5647870ce76b52e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f21179db1fb1371aac7f36bdc76d18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7f21179db1fb1371aac7f36bdc76d18"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_aquarium.html#ab7f21179db1fb1371aac7f36bdc76d18">mTankCleanliness</a> = 40</td></tr>
+<tr class="memdesc:ab7f21179db1fb1371aac7f36bdc76d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanliness of tank in days left. <br /></td></tr>
+<tr class="separator:ab7f21179db1fb1371aac7f36bdc76d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an aquarium. </p>
@@ -218,7 +256,8 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
       </table>
 </div><div class="memdoc">
 
-<p>Accept a visitor for the collection. </p>
+<p>accepts visitor function </p>
+<p>Accept a visitor for the collection.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">visitor</td><td>The visitor for the collection </td></tr>
@@ -252,6 +291,48 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
 
 </div>
 </div>
+<a class="anchor" id="a6f0ff99cf0e35b1de3a749cbb9bc39ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAquarium::AddBubbles </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_c_item.html">CItem</a> &gt;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add an item to vector to be added to aquarium. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>New item to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7149d1ef541f6bbed798217c3dc7db57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAquarium::CheckFishFood </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>checks food of fish in aquarium </p>
+<p>Check for food level and kills fish if below the level. </p>
+
+</div>
+</div>
 <a class="anchor" id="adc9e22446b161ec23acdef368cb8ac2e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -267,6 +348,30 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
 
 <p>Clear the aquarium data. </p>
 <p>Deletes all known items in the aquarium. </p>
+
+</div>
+</div>
+<a class="anchor" id="af826b6fb88222f18d310c64bfcbcb3db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAquarium::DeleteBubbles </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_c_item.html">CItem</a> &gt;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add an item to vector to be deleted from aquarium. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>New item to delete </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -382,6 +487,24 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
 
 </div>
 </div>
+<a class="anchor" id="a90cb11eb8c047fe97ae39701d8f64d72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CAquarium::IsEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>States if mItems is empty or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>Boolean stating whether mItems is empty or not </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="af6f6a937ef7619ff731d4471de4c2773"></a>
 <div class="memitem">
 <div class="memproto">
@@ -475,7 +598,8 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
       </table>
 </div><div class="memdoc">
 
-<p>Draw the aquarium. </p>
+<p>Member functions of <a class="el" href="class_c_aquarium.html" title="Represents an aquarium. ">CAquarium</a>. </p>
+<p>Draw the aquarium.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graphics</td><td>The GDI+ graphics context to draw on </td></tr>
@@ -586,9 +710,6 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
 <a class="anchor" id="a0067435ef1bca135ffed750ec8833c3b"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void CAquarium::XmlItem </td>
@@ -598,11 +719,6 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Handle an item node. </p>
@@ -624,7 +740,7 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool CAquarium::mTrashcanActive</td>
+          <td class="memname">bool CAquarium::mTrashcanActive = false</td>
         </tr>
       </table>
   </td>
@@ -647,7 +763,7 @@ std::vector&lt; std::shared_ptr<br class="typebreak" />
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_aquarium.html">CAquarium</a></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:30:36 for CSE 335 Project by
+    <li class="footer">Generated on Sun Oct 5 2014 23:18:24 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

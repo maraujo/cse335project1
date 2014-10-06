@@ -104,11 +104,12 @@ $(document).ready(function(){initNavTree('class_c_item.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CItem Class Reference</div>  </div>
+<div class="title">CItem Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('class_c_item.html','');});
 
 <p><code>#include &lt;<a class="el" href="_item_8h_source.html">Item.h</a>&gt;</code></p>
 
-<p>Inherited by <a class="el" href="class_c_decor_treasure.html">CDecorTreasure</a>, <a class="el" href="class_c_fish.html">CFish</a>, and <a class="el" href="class_testing_1_1_c_item_mock.html">Testing::CItemMock</a>.</p>
+<p>Inherited by <a class="el" href="class_c_air_bubbles.html">CAirBubbles</a>, <a class="el" href="class_c_decor_sparty_treasure.html">CDecorSpartyTreasure</a>, <a class="el" href="class_c_decor_treasure.html">CDecorTreasure</a>, <a class="el" href="class_c_fish.html">CFish</a>, and <a class="el" href="class_testing_1_1_c_item_mock.html">Testing::CItemMock</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -153,6 +154,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memdesc:ab3ffe07990fd2dec1e5cb65ad8ede7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test this item to see if it has been clicked on.  <a href="#ab3ffe07990fd2dec1e5cb65ad8ede7a4">More...</a><br /></td></tr>
 <tr class="separator:ab3ffe07990fd2dec1e5cb65ad8ede7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0bad7d47a01ff133734b5498f9ca3bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#ad0bad7d47a01ff133734b5498f9ca3bb">XmlLoad</a> (const std::shared_ptr&lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt; &amp;node)</td></tr>
+<tr class="memdesc:ad0bad7d47a01ff133734b5498f9ca3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the attributes for an item node.  <a href="#ad0bad7d47a01ff133734b5498f9ca3bb">More...</a><br /></td></tr>
 <tr class="separator:ad0bad7d47a01ff133734b5498f9ca3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10584fa8e05d3abe125f95f0ceecdedd"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr<br class="typebreak" />
 &lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a10584fa8e05d3abe125f95f0ceecdedd">XmlSave</a> (const std::shared_ptr&lt; <a class="el" href="classxmlnode_1_1_c_xml_node.html">xmlnode::CXmlNode</a> &gt; &amp;node)</td></tr>
@@ -170,6 +172,22 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:acce2ebffcd0c34ec60e69da1f97f3fbe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#acce2ebffcd0c34ec60e69da1f97f3fbe">Accept</a> (<a class="el" href="class_c_item_visitor.html">CItemVisitor</a> *visitor)</td></tr>
 <tr class="memdesc:acce2ebffcd0c34ec60e69da1f97f3fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept a visitor.  <a href="#acce2ebffcd0c34ec60e69da1f97f3fbe">More...</a><br /></td></tr>
 <tr class="separator:acce2ebffcd0c34ec60e69da1f97f3fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4167d6d6d76eedcdf1a1d4a1c95f13"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a6c4167d6d6d76eedcdf1a1d4a1c95f13">CheckFood</a> ()=0</td></tr>
+<tr class="memdesc:a6c4167d6d6d76eedcdf1a1d4a1c95f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks for fish starving  <a href="#a6c4167d6d6d76eedcdf1a1d4a1c95f13">More...</a><br /></td></tr>
+<tr class="separator:a6c4167d6d6d76eedcdf1a1d4a1c95f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f8e7042fab9b7d975c9be72be617e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3f8e7042fab9b7d975c9be72be617e4"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#ac3f8e7042fab9b7d975c9be72be617e4">Hunger</a> ()=0</td></tr>
+<tr class="memdesc:ac3f8e7042fab9b7d975c9be72be617e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">increments the days since the fish was fed <br /></td></tr>
+<tr class="separator:ac3f8e7042fab9b7d975c9be72be617e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ad08a33242b24cc14f2702a3c153111"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a7ad08a33242b24cc14f2702a3c153111">SetImage</a> (const std::wstring &amp;file)</td></tr>
+<tr class="memdesc:a7ad08a33242b24cc14f2702a3c153111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the image file to draw.  <a href="#a7ad08a33242b24cc14f2702a3c153111">More...</a><br /></td></tr>
+<tr class="separator:a7ad08a33242b24cc14f2702a3c153111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a0e1bbd641657d482521faced06a93361"><td class="memItemLeft" align="right" valign="top">static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a0e1bbd641657d482521faced06a93361">ImagesDirectory</a> = L&quot;images/&quot;</td></tr>
+<tr class="memdesc:a0e1bbd641657d482521faced06a93361"><td class="mdescLeft">&#160;</td><td class="mdescRight">The directory containing the file images.  <a href="#a0e1bbd641657d482521faced06a93361">More...</a><br /></td></tr>
+<tr class="separator:a0e1bbd641657d482521faced06a93361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -267,6 +285,34 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 
 <p>Reimplemented in <a class="el" href="class_c_fish.html#a5ddb5c16bc3f2ea2b99fd64e37d6b328">CFish</a>, <a class="el" href="class_c_decor_treasure.html#a52a7c91150632f8005040b7859fe2aef">CDecorTreasure</a>, <a class="el" href="class_c_fish_cat.html#a40d495814178f793ebdc4943fd95b755">CFishCat</a>, <a class="el" href="class_c_fish_angel.html#a6aef3f782edbbc32a3df578ec66790f8">CFishAngel</a>, <a class="el" href="class_c_fish_beta.html#af7712b7717ef144ac2972d532f5c1223">CFishBeta</a>, and <a class="el" href="class_testing_1_1_c_item_mock.html#a45f7d0b47ec996e9e4d7d26f965bad0a">Testing::CItemMock</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c4167d6d6d76eedcdf1a1d4a1c95f13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool CItem::CheckFood </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks for fish starving </p>
+<dl class="section return"><dt>Returns</dt><dd>true if starved false otherwise </dd></dl>
+
+<p>Implemented in <a class="el" href="class_c_fish.html#a64fbaa89260e4383c12559949955d772">CFish</a>, <a class="el" href="class_c_decor_sparty_treasure.html#aa3551c3f0892cdc49543ebd3f31e4f19">CDecorSpartyTreasure</a>, <a class="el" href="class_c_decor_treasure.html#a248a1a3e63c54246998e66327388d0b6">CDecorTreasure</a>, <a class="el" href="class_c_air_bubbles.html#a8bde91136827d2ba919e49080344b1d9">CAirBubbles</a>, and <a class="el" href="class_testing_1_1_c_item_mock.html#abc76ed1d233976294b63373f292a7ad5">Testing::CItemMock</a>.</p>
 
 </div>
 </div>
@@ -472,6 +518,30 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="a7ad08a33242b24cc14f2702a3c153111"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CItem::SetImage </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the image file to draw. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The base filename. Blank files are allowed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a9c194f3f08e515853600cecca3e6d319"></a>
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +645,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_c_fish.html#a1f32288b28d3c1f186bd51cf8ac71aeb">CFish</a>.</p>
+<p>Reimplemented in <a class="el" href="class_c_decor_sparty_treasure.html#a31c0d02335253ca20bbca716f7e90b94">CDecorSpartyTreasure</a>, <a class="el" href="class_c_fish.html#a1f32288b28d3c1f186bd51cf8ac71aeb">CFish</a>, and <a class="el" href="class_c_air_bubbles.html#a742dde60cd624f77fa447d52d5036d5d">CAirBubbles</a>.</p>
 
 </div>
 </div>
@@ -600,6 +670,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Load the attributes for an item node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The Xml node we are loading the item from</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>brief Load the attributes for an item node.</p>
 <p>This is the base class version that loads the attributes common to all items. Override this to load custom attributes for specific items.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -609,7 +687,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_c_fish.html#a997f243d89dd8c397597010eec4b611e">CFish</a>.</p>
+<p>Reimplemented in <a class="el" href="class_c_decor_sparty_treasure.html#a3e25db24b07695778bed37da5ee78f46">CDecorSpartyTreasure</a>, <a class="el" href="class_c_air_bubbles.html#a99fa944604e19a5b272ba34b6607dac5">CAirBubbles</a>, and <a class="el" href="class_c_fish.html#a997f243d89dd8c397597010eec4b611e">CFish</a>.</p>
 
 </div>
 </div>
@@ -644,7 +722,31 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>XML node </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_c_decor_treasure.html#aa65c74f77df10ce7a478f226ffdb1d2f">CDecorTreasure</a>, <a class="el" href="class_c_fish_angel.html#a6ff025c9394c0743e83d2e5568c86a63">CFishAngel</a>, <a class="el" href="class_c_fish_cat.html#a1cc19c4866103099300b49266517954b">CFishCat</a>, <a class="el" href="class_c_fish.html#a0788654e792a879e0a136a1bbe9087f2">CFish</a>, and <a class="el" href="class_c_fish_beta.html#a0be2886a531ede77bfa5338fec71d71b">CFishBeta</a>.</p>
+<p>Reimplemented in <a class="el" href="class_c_decor_sparty_treasure.html#ab8ddb0b24fafd51d02fff428d7004a0d">CDecorSpartyTreasure</a>, <a class="el" href="class_c_decor_treasure.html#aa65c74f77df10ce7a478f226ffdb1d2f">CDecorTreasure</a>, <a class="el" href="class_c_fish_angel.html#a6ff025c9394c0743e83d2e5568c86a63">CFishAngel</a>, <a class="el" href="class_c_fish_cat.html#a1cc19c4866103099300b49266517954b">CFishCat</a>, <a class="el" href="class_c_fish.html#a0788654e792a879e0a136a1bbe9087f2">CFish</a>, <a class="el" href="class_c_fish_beta.html#a0be2886a531ede77bfa5338fec71d71b">CFishBeta</a>, and <a class="el" href="class_c_air_bubbles.html#a295053586154660bb3f1b6bd937ba87d">CAirBubbles</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a0e1bbd641657d482521faced06a93361"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::wstring CItem::ImagesDirectory = L&quot;images/&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The directory containing the file images. </p>
+<p>The directory were the Sparty treasure chest images are stored </p>
 
 </div>
 </div>
@@ -658,7 +760,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_item.html">CItem</a></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:30:37 for CSE 335 Project by
+    <li class="footer">Generated on Sun Oct 5 2014 23:18:24 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

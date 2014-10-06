@@ -15,6 +15,9 @@ using namespace std;
 
 namespace Testing
 {
+	/**
+	 * \brief test bed for the Aquarium
+	 */
 	TEST_CLASS(CAquariumTest)
 	{
 	public:

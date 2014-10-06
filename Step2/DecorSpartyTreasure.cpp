@@ -96,6 +96,7 @@ void CDecorSpartyTreasure::Update(double elapsed)
 
 /** \brief Save this item to an XML node
 * \param node The node we are going to be a child of
+* \returns itemNode the itme saved to XML
 */
 std::shared_ptr<xmlnode::CXmlNode> CDecorSpartyTreasure::XmlSave(const std::shared_ptr<xmlnode::CXmlNode> &node)
 {

@@ -52,12 +52,15 @@ public:
 	/// \brief Get the height of the aquarium
 	/// \returns Aquarium height
 	int GetHeight() const { return mBackground->GetHeight(); }
-
+	/// \brief accepts visitor function
 	void Accept(CItemVisitor *visitor);
-
+	/// \brief checks food of fish in aquarium
 	void CheckFishFood();
+	/// \brief slowly starts to add to dirtyness
 	void DirtyTank();
+	/// \brief sets the cleanliness of the tank back to max
 	void SetTankCleanliness(int Max){ mTankCleanliness = Max; }
+	/// \brief gets the max cleanliness of the tank possible
 	int GetTankMaxCleanliness(){ return mTankMaxCleanliness; }
 
 private:

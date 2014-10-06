@@ -85,8 +85,10 @@ public:
 	/** \brief Accept a visitor
 	* \param visitor The visitor we accept */
 	virtual void Accept(CItemVisitor *visitor){};
-
+	/// \brief checks for fish starving
+	/// \returns true if starved false otherwise
 	virtual bool CheckFood() = 0;
+	/// \brief increments the days since the fish was fed
 	virtual void Hunger() = 0;
 
 	/** The directory were the Sparty treasure chest images are stored */

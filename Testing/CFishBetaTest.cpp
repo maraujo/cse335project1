@@ -13,6 +13,9 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Testing
 {
+	/**
+	 * \brief Test bed for fish beta class
+	 */
 	TEST_CLASS(CFishBetaTest)
 	{
 	public:

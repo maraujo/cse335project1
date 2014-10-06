@@ -1,9 +1,12 @@
 var searchData=
 [
+  ['onadddecorspartytreasurechest',['OnAdddecorSpartytreasurechest',['../class_c_child_view.html#aa6048bf4bc472d12b83fc86e4532c7ed',1,'CChildView']]],
+  ['onadddecortreasurechest',['OnAdddecorTreasurechest',['../class_c_child_view.html#a9936e25d5590a4a711ff543b6026105e',1,'CChildView']]],
   ['onaddfishangelfish',['OnAddfishAngelfish',['../class_c_child_view.html#a0851773b3881bff0ad4339ff2326cc3a',1,'CChildView']]],
   ['onaddfishbetafish',['OnAddfishBetafish',['../class_c_child_view.html#ad05faefbdb17d1c73f85de75b01a1ac1',1,'CChildView']]],
   ['onaddfishcatfish',['OnAddfishCatfish',['../class_c_child_view.html#a8c6c80f2af4f28847c3679ebddaa5ff9',1,'CChildView']]],
-  ['onaddtresure',['OnAddTresure',['../class_c_child_view.html#a396c5835337383ca877c1150a5edc775',1,'CChildView']]],
+  ['oncareclean',['OnCareClean',['../class_c_child_view.html#af06c6cf472b7ec0f76a2cb961c52e3de',1,'CChildView']]],
+  ['oncarefeed',['OnCareFeed',['../class_c_child_view.html#af1d00f1aa8d64e8299ea3a3a661075b5',1,'CChildView']]],
   ['ondraw',['OnDraw',['../class_c_aquarium.html#a20b4899158d1ba4bc41217630d47e180',1,'CAquarium']]],
   ['onerasebkgnd',['OnEraseBkgnd',['../class_c_child_view.html#a6060e6d09d522d345dcee5a01d41c1f0',1,'CChildView']]],
   ['onfileopen',['OnFileOpen',['../class_c_child_view.html#abb421ebb304005d661c08e3482eab51f',1,'CChildView']]],

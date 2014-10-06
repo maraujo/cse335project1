@@ -15,6 +15,7 @@ var searchData=
   ['getname',['GetName',['../classxmlnode_1_1_c_xml_node.html#a90fbe5f25e67b82a0d3caf7bb5d46791',1,'xmlnode::CXmlNode']]],
   ['getnumchildren',['GetNumChildren',['../classxmlnode_1_1_c_xml_node.html#ab455bd55e7f3dbd550e81d7fe293d146',1,'xmlnode::CXmlNode']]],
   ['getroot',['GetRoot',['../classxmlnode_1_1_c_xml_node_1_1_document.html#a2840fa23e3e31e7150d0421c1f91a24c',1,'xmlnode::CXmlNode::Document']]],
+  ['gettankmaxcleanliness',['GetTankMaxCleanliness',['../class_c_aquarium.html#a47ed99e7dcb34f8812ce97a19eb479ae',1,'CAquarium']]],
   ['gettrashcanactive',['GetTrashcanActive',['../class_c_aquarium.html#a7d9e1274103618f6863a5f811e1ec0c9',1,'CAquarium']]],
   ['gettype',['GetType',['../classxmlnode_1_1_c_xml_node.html#a85b513f8617fb75a721c646b62be95ab',1,'xmlnode::CXmlNode']]],
   ['getvalue',['GetValue',['../classxmlnode_1_1_c_xml_node.html#a383ef3eb35e61fc6a5a8889ed67f2a33',1,'xmlnode::CXmlNode']]],
