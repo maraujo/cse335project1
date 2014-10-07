@@ -9,6 +9,7 @@
 #pragma once
 #include "Aquarium.h"
 
+class CFish;
 class CFishAngel;
 class CFishCat;
 class CFishBeta;
@@ -24,7 +25,6 @@ public:
 	CItemVisitor();
 	/// \brief Destructor
 	virtual ~CItemVisitor();
-
 
 	/** \brief Visit a CFishAngel object
 	* \param angel we are visiting */

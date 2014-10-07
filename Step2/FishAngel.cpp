@@ -32,6 +32,10 @@ CFishAngel::CFishAngel(CAquarium *aquarium) : CFish(aquarium, FishAngelImageName
 	mPregnant = false;
 	/// Days since had sex
 	mPregnantDay = 0;
+	//Days without food
+	mFood = 15;
+	///Days since food
+	mDaysSinceFed = 0;
 
 }
 

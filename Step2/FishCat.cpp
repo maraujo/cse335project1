@@ -34,6 +34,10 @@ CFishCat::CFishCat(CAquarium *aquarium) : CFish(aquarium,FishCatImageName)
 	mPregnant = false;
 	/// Days since had sex
 	mPregnantDay = 0;
+	///Days without food
+	mFood = 10;
+	///Days since food
+	mDaysSinceFed = 0;
 }
 
 /**

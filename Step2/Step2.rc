@@ -117,7 +117,16 @@ BEGIN
         MENUITEM "&Beta Fish",                  ID_ADDFISH_BETAFISH
         MENUITEM "&Angel Fish",                 ID_ADDFISH_ANGELFISH
         MENUITEM "&Cat Fish",                   ID_ADDFISH_CATFISH
-        MENUITEM "&Tresure",                    ID_ADDFISH_TRESURE
+    END
+    POPUP "&Add Decor"
+    BEGIN
+        MENUITEM "&Treasure Chest",             ID_ADDDECOR_TREASURECHEST
+        MENUITEM "&Sparty Treasure Chest",      ID_ADDDECOR_SPARTYTREASURECHEST
+    END
+    POPUP "Care"
+    BEGIN
+        MENUITEM "&Clean",                      ID_CARE_CLEAN
+        MENUITEM "&Feed",                       ID_CARE_FEED
     END
     POPUP "&Help"
     BEGIN

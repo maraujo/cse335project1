@@ -32,6 +32,8 @@ public:
 
 	/// \brief Accept Visitor
 	virtual void Accept(CItemVisitor *visitor) override { visitor->VisitAngel(this);  }
-	
+	/// \brief runs a function to increment time and the tests associated with them
 	virtual void CFishAngel::PassTime() override;
+	/// \brief resets the time since fed back to zero
+	void ResetDaysSinceFed() { mDaysSinceFed = 0; }
 };
