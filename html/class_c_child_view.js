@@ -20,5 +20,7 @@ var class_c_child_view =
     [ "mFirstDraw", "class_c_child_view.html#a02e7e39b1dc65025e429d6284c122b65", null ],
     [ "mGrabbedItem", "class_c_child_view.html#a5666495f6927ddc0636738dc02db8c3f", null ],
     [ "mLastTime", "class_c_child_view.html#ade201e82e361a98862d72f590abf736a", null ],
+    [ "mScrollingHandDisable", "class_c_child_view.html#ad6182a50678f7b6742010cdc65451278", null ],
+    [ "mScrollingHandEnable", "class_c_child_view.html#a3560588fc8250fc15a2776be803da868", null ],
     [ "mTimeFreq", "class_c_child_view.html#a8a2cf821d68b57f72cb6656f09b5537c", null ]
 ];

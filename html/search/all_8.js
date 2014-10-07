@@ -3,6 +3,8 @@ var searchData=
   ['initialx',['InitialX',['../_child_view_8cpp.html#a5b624ea6d231124643c7bd6a77380b21',1,'ChildView.cpp']]],
   ['initialy',['InitialY',['../_child_view_8cpp.html#a4f3f81baa84a5a3fa78ce86a3d44295c',1,'ChildView.cpp']]],
   ['isinterested',['IsInterested',['../class_c_fish.html#ac6ec8b180f07cedc9532dce5f1f72f1b',1,'CFish']]],
+  ['ismoving',['IsMoving',['../class_c_aquarium.html#ad125824da2a08ffb910c7bba379e1b48',1,'CAquarium']]],
+  ['isoverscrollinghand',['IsOverScrollingHand',['../class_c_aquarium.html#aeadcf03cb65a90072d5d461464e7eb1d',1,'CAquarium']]],
   ['isovertrashcan',['IsOverTrashcan',['../class_c_aquarium.html#af6f6a937ef7619ff731d4471de4c2773',1,'CAquarium']]],
   ['ispregnant',['IsPregnant',['../class_c_fish.html#a417c40c2383df65aa19c9574522fe6b5',1,'CFish']]],
   ['item_2ecpp',['Item.cpp',['../_item_8cpp.html',1,'']]],

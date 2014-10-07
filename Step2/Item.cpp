@@ -110,8 +110,10 @@ void CItem::XmlLoad(const std::shared_ptr<xmlnode::CXmlNode> &node)
 /**
 * \brief Draw our fish
 * \param graphics The graphics context to draw on
+* \param offX The offset of the aquarium background
+* \param offY The offset of the aquarium background
 */
-void CItem::Draw(Gdiplus::Graphics *graphics)
+void CItem::Draw(Gdiplus::Graphics *graphics,int offX, int offY)
 {
 	double wid = mItemImage->GetWidth();
 	double hit = mItemImage->GetHeight();
@@ -119,13 +121,13 @@ void CItem::Draw(Gdiplus::Graphics *graphics)
 	if (mMirror)
 	{
 		graphics->DrawImage(mItemImage.get(),
-			float(GetX() + wid / 2), float(GetY() - hit / 2),
+			float(GetX() + wid / 2) + offX, float(GetY() - hit / 2) + offY,
 			-(float)mItemImage->GetWidth(), (float)mItemImage->GetHeight());
 	}
 	else
 	{
 		graphics->DrawImage(mItemImage.get(),
-			float(GetX() - wid / 2), float(GetY() - hit / 2),
+			float(GetX() - wid / 2) + offX, float(GetY() - hit / 2) + offY,
 			(float)mItemImage->GetWidth(), (float)mItemImage->GetHeight());
 	}
 }

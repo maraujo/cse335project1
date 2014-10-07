@@ -117,8 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a74af65aa8db904e27441be6d3a69b4f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74af65aa8db904e27441be6d3a69b4f5"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CItemMock</b> (<a class="el" href="class_c_aquarium.html">CAquarium</a> *aquarium)</td></tr>
 <tr class="separator:a74af65aa8db904e27441be6d3a69b4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32190c30be8aa369c4e30b52ba284039"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_testing_1_1_c_item_mock.html#a32190c30be8aa369c4e30b52ba284039">Draw</a> (Gdiplus::Graphics *graphics)</td></tr>
-<tr class="memdesc:a32190c30be8aa369c4e30b52ba284039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw our fish.  <a href="#a32190c30be8aa369c4e30b52ba284039">More...</a><br /></td></tr>
+<tr class="memitem:a32190c30be8aa369c4e30b52ba284039"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32190c30be8aa369c4e30b52ba284039"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (Gdiplus::Graphics *graphics)</td></tr>
 <tr class="separator:a32190c30be8aa369c4e30b52ba284039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45f7d0b47ec996e9e4d7d26f965bad0a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_testing_1_1_c_item_mock.html#a45f7d0b47ec996e9e4d7d26f965bad0a">Accept</a> (<a class="el" href="class_c_item_visitor.html">CItemVisitor</a> *visitor) override</td></tr>
 <tr class="memdesc:a45f7d0b47ec996e9e4d7d26f965bad0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept a visitor.  <a href="#a45f7d0b47ec996e9e4d7d26f965bad0a">More...</a><br /></td></tr>
@@ -149,6 +149,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="separator:a062f3337bf437982cfb6386fa890509f inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c194f3f08e515853600cecca3e6d319 inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a9c194f3f08e515853600cecca3e6d319">SetLocation</a> (double x, double y)</td></tr>
 <tr class="separator:a9c194f3f08e515853600cecca3e6d319 inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98512f7c57f6aff855ff6192ff993386 inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a98512f7c57f6aff855ff6192ff993386">Draw</a> (Gdiplus::Graphics *graphics, int oX, int oY)</td></tr>
+<tr class="memdesc:a98512f7c57f6aff855ff6192ff993386 inherit pub_methods_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw our fish.  <a href="#a98512f7c57f6aff855ff6192ff993386">More...</a><br /></td></tr>
+<tr class="separator:a98512f7c57f6aff855ff6192ff993386 inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3ffe07990fd2dec1e5cb65ad8ede7a4 inherit pub_methods_class_c_item"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#ab3ffe07990fd2dec1e5cb65ad8ede7a4">HitTest</a> (int x, int y)</td></tr>
 <tr class="memdesc:ab3ffe07990fd2dec1e5cb65ad8ede7a4 inherit pub_methods_class_c_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test this item to see if it has been clicked on.  <a href="#ab3ffe07990fd2dec1e5cb65ad8ede7a4">More...</a><br /></td></tr>
 <tr class="separator:ab3ffe07990fd2dec1e5cb65ad8ede7a4 inherit pub_methods_class_c_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,41 +216,6 @@ std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" vali
 
 </div>
 </div>
-<a class="anchor" id="a32190c30be8aa369c4e30b52ba284039"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Testing::CItemMock::Draw </td>
-          <td>(</td>
-          <td class="paramtype">Gdiplus::Graphics *&#160;</td>
-          <td class="paramname"><em>graphics</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Draw our fish. </p>
-<p>Draw this item </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">graphics</td><td>Device context to draw on</td></tr>
-    <tr><td class="paramname">graphics</td><td>The graphics context to draw on </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="class_c_item.html#acfad712746a2da68669c38f5704b3243">CItem</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Testing/CItemTest.cpp</li>
 </ul>
@@ -257,7 +225,7 @@ std::unique_ptr&lt; Gdiplus::Bitmap &gt;&#160;</td><td class="memItemRight" vali
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>Testing</b></li><li class="navelem"><a class="el" href="class_testing_1_1_c_item_mock.html">CItemMock</a></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:30:37 for CSE 335 Project by
+    <li class="footer">Generated on Mon Oct 6 2014 20:20:33 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -7,6 +7,9 @@ var searchData=
   ['setgender',['SetGender',['../class_c_fish.html#ab578a601ffc006a3b513ce320c809b6c',1,'CFish']]],
   ['setlocation',['SetLocation',['../class_c_item.html#a9c194f3f08e515853600cecca3e6d319',1,'CItem']]],
   ['setmirror',['SetMirror',['../class_c_item.html#a8718f7e56783f5c974fd70b934e4fb79',1,'CItem']]],
+  ['setmoving',['SetMoving',['../class_c_aquarium.html#aa7d1efd70b93122051fa33a7eb2feea5',1,'CAquarium']]],
+  ['setscrollingactive',['SetScrollingActive',['../class_c_aquarium.html#a52fb19f4ebff7ec6e2285ced2eb9f475',1,'CAquarium']]],
+  ['setstartpoint',['SetStartPoint',['../class_c_aquarium.html#a6aab7bee87eac42f9b16b6ab7ba41cd9',1,'CAquarium']]],
   ['settrashcanactive',['SetTrashcanActive',['../class_c_aquarium.html#a8c9ff6d290cca01ee435ccc1374a3e78',1,'CAquarium']]],
   ['startpregnancy',['StartPregnancy',['../class_c_fish.html#ad1ba247ab1ac3152b7e1e24932984df9',1,'CFish']]]
 ];

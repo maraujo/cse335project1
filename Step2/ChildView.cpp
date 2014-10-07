@@ -13,7 +13,6 @@
 #include "DecorTreasure.h"
 #include "ChildView.h"
 
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -101,6 +100,7 @@ void CChildView::OnPaint()
 	Graphics graphics(&memory);
 	graphics.Clear(Color(0, 0, 0));
 
+	mAquarium.UpdateWindowPosition(&rect);
 	mAquarium.OnDraw(&graphics);
 
 	Graphics graphicsReal(dc.m_hDC);
@@ -162,6 +162,11 @@ void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 		// Move it to the end of the list of items
 		// you'll need code here to do that...
 	}
+	if (mAquarium.GetScrollingActive() == true)
+	{
+		mAquarium.SetStartPoint(&point);
+		mAquarium.SetMoving(true);
+	};
 }
 
 /** \brief Called when the left mouse button is released
@@ -170,7 +175,17 @@ void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 */
 void CChildView::OnLButtonUp(UINT nFlags, CPoint point)
 {
+	CRect rect;
+	GetClientRect(&rect);
+
+	mAquarium.SetMoving(false);
 	OnMouseMove(nFlags, point);
+	if (mAquarium.IsOverScrollingHand(point.x, point.y, &rect) == true)
+	{
+		mAquarium.SetScrollingActive(!mAquarium.GetScrollingActive());
+	};
+	
+	
 }
 
 /** \brief Called when the mouse is moved
@@ -179,6 +194,8 @@ void CChildView::OnLButtonUp(UINT nFlags, CPoint point)
 */
 void CChildView::OnMouseMove(UINT nFlags, CPoint point)
 {
+	CRect rect;
+	GetClientRect(&rect);
 	// See if an item is currently being moved by the mouse
 	if (mGrabbedItem != nullptr)
 	{
@@ -186,7 +203,7 @@ void CChildView::OnMouseMove(UINT nFlags, CPoint point)
 		// move it while the left button is down.
 		if (nFlags & MK_LBUTTON)
 		{
-			mGrabbedItem->SetLocation(point.x, point.y);
+			mGrabbedItem->SetLocation(point.x - mAquarium.GetBgX(), point.y - mAquarium.GetBgY());
 		}
 		else
 		{
@@ -203,6 +220,12 @@ void CChildView::OnMouseMove(UINT nFlags, CPoint point)
 		// Force the screen to redraw
 		Invalidate();
 	}
+	if (mAquarium.GetScrollingActive() == true && mAquarium.IsMoving())
+	{
+		mAquarium.MoveBackground(&point, &rect);
+	};
+	
+		
 }
 
 /**

@@ -146,9 +146,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="separator:a062f3337bf437982cfb6386fa890509f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c194f3f08e515853600cecca3e6d319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a9c194f3f08e515853600cecca3e6d319">SetLocation</a> (double x, double y)</td></tr>
 <tr class="separator:a9c194f3f08e515853600cecca3e6d319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfad712746a2da68669c38f5704b3243"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#acfad712746a2da68669c38f5704b3243">Draw</a> (Gdiplus::Graphics *graphics)</td></tr>
-<tr class="memdesc:acfad712746a2da68669c38f5704b3243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw our fish.  <a href="#acfad712746a2da68669c38f5704b3243">More...</a><br /></td></tr>
-<tr class="separator:acfad712746a2da68669c38f5704b3243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98512f7c57f6aff855ff6192ff993386"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#a98512f7c57f6aff855ff6192ff993386">Draw</a> (Gdiplus::Graphics *graphics, int oX, int oY)</td></tr>
+<tr class="memdesc:a98512f7c57f6aff855ff6192ff993386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw our fish.  <a href="#a98512f7c57f6aff855ff6192ff993386">More...</a><br /></td></tr>
+<tr class="separator:a98512f7c57f6aff855ff6192ff993386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3ffe07990fd2dec1e5cb65ad8ede7a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_item.html#ab3ffe07990fd2dec1e5cb65ad8ede7a4">HitTest</a> (int x, int y)</td></tr>
 <tr class="memdesc:ab3ffe07990fd2dec1e5cb65ad8ede7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test this item to see if it has been clicked on.  <a href="#ab3ffe07990fd2dec1e5cb65ad8ede7a4">More...</a><br /></td></tr>
 <tr class="separator:ab3ffe07990fd2dec1e5cb65ad8ede7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -270,7 +270,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="acfad712746a2da68669c38f5704b3243"></a>
+<a class="anchor" id="a98512f7c57f6aff855ff6192ff993386"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -281,8 +281,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">void CItem::Draw </td>
           <td>(</td>
           <td class="paramtype">Gdiplus::Graphics *&#160;</td>
-          <td class="paramname"><em>graphics</em></td><td>)</td>
+          <td class="paramname"><em>graphics</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -297,11 +313,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <table class="params">
     <tr><td class="paramname">graphics</td><td>Device context to draw on</td></tr>
     <tr><td class="paramname">graphics</td><td>The graphics context to draw on </td></tr>
+    <tr><td class="paramname">offX</td><td>The offset of the aquarium background </td></tr>
+    <tr><td class="paramname">offY</td><td>The offset of the aquarium background </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Reimplemented in <a class="el" href="class_c_decor_treasure.html#a77cf0e3b11aaf48dd06aeb84d3b75a81">CDecorTreasure</a>, and <a class="el" href="class_testing_1_1_c_item_mock.html#a32190c30be8aa369c4e30b52ba284039">Testing::CItemMock</a>.</p>
 
 </div>
 </div>
@@ -658,7 +674,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_item.html">CItem</a></li>
-    <li class="footer">Generated on Tue Sep 30 2014 18:30:37 for CSE 335 Project by
+    <li class="footer">Generated on Mon Oct 6 2014 20:20:33 for CSE 335 Project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
