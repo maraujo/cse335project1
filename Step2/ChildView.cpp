@@ -16,6 +16,7 @@
 #include "AirBubbles.h"
 #include "DecorSpartyTreasure.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -107,6 +108,7 @@ void CChildView::OnPaint()
 	graphics.Clear(Color(0, 0, 0));
 
 	mAquarium.UpdateWindowPosition(&rect);
+
 	mAquarium.OnDraw(&graphics);
 
 	Graphics graphicsReal(dc.m_hDC);
@@ -190,8 +192,6 @@ void CChildView::OnLButtonUp(UINT nFlags, CPoint point)
 	{
 		mAquarium.SetScrollingActive(!mAquarium.GetScrollingActive());
 	};
-	
-	
 }
 
 /** \brief Called when the mouse is moved
@@ -230,8 +230,6 @@ void CChildView::OnMouseMove(UINT nFlags, CPoint point)
 	{
 		mAquarium.MoveBackground(&point, &rect);
 	};
-	
-		
 }
 
 /**

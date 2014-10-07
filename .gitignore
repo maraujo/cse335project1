@@ -19,6 +19,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+html/
+Step2.v12*
+
 # Roslyn cache directories
 *.ide/
 
@@ -211,3 +214,5 @@ FakesAssemblies/
 *.exe
 *.out
 *.app
+Step2.v12.suo
+*.suo
