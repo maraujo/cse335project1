@@ -23,6 +23,7 @@ public:
 
 // Attributes
 public:
+	
 
 // Operations
 public:
@@ -52,6 +53,8 @@ private:
 
 	long long mLastTime;    ///< Last time we read the timer
 	double mTimeFreq;       ///< Rate the timer updates
+	std::unique_ptr<Gdiplus::Bitmap> mScrollingHandEnable;  ///< Scrolling Hand Enable Image
+	std::unique_ptr<Gdiplus::Bitmap> mScrollingHandDisable;  ///< Scrolling Hand Disable Image
 
 public:
 	afx_msg void OnAddfishBetafish();

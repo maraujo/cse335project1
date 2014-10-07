@@ -56,7 +56,7 @@ public:
 
 	//! Draw this item
 	//! \param graphics Device context to draw on
-	virtual void Draw(Gdiplus::Graphics *graphics);
+	virtual void Draw(Gdiplus::Graphics *graphics, int oX, int oY);
 
 	/** \brief Test this item to see if it has been clicked on
 	* \param x X location on the aquarium to test
