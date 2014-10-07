@@ -176,7 +176,7 @@ bool CAquarium::IsOverScrollingHand(int x, int y, CRect *window)
 {
 	int bottomY = window->bottom;
 	int rightX = window->right;
-	return x > rightX - (int)mScrollingHandDisable->GetWidth() && y >  bottomY - (int)mScrollingHandDisable->GetHeight();
+	return x > rightX - mScrollingHandDisable->GetWidth() && y >  bottomY - mScrollingHandDisable->GetHeight();
 }
 
 
