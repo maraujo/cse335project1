@@ -35,14 +35,7 @@ int frameCount = 0;
 CAquarium::CAquarium()
 {
 	mBackground = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/backgroundW.png"));
-	mTrashcan = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/trashcan.png"));
-	mScrollingHandDisable = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/nav1.png"));
-	mScrollingHandEnable = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/nav2.png"));
-
-	mTrashcanActive = false;
-	mScrollingActive = false;
-	mBgOffsetX = 0;
-	mBgOffsetY = 0;
+	
 	if (mBackground->GetLastStatus() != Ok)
 	{
 		AfxMessageBox(L"Failed to open images/backgroundW.png");
@@ -53,6 +46,13 @@ CAquarium::CAquarium()
 	{
 		AfxMessageBox(L"Failed to open images/trashcan.png");
 	}
+
+	mTrashcanActive = false;
+	mScrollingHandDisable = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/nav1.png"));
+	mScrollingHandEnable = unique_ptr<Bitmap>(Bitmap::FromFile(L"images/nav2.png"));
+	mScrollingActive = false;
+	mBgOffsetX = 0;
+	mBgOffsetY = 0;
 }
 
 
@@ -63,16 +63,13 @@ CAquarium::~CAquarium()
 {
 }
 
-
-
 /** \brief Draw the aquarium
 * \param graphics The GDI+ graphics context to draw on
 */
 void CAquarium::OnDraw(Gdiplus::Graphics *graphics)
 {
-		graphics->DrawImage(mBackground.get(), mBgOffsetX, mBgOffsetY,
-			mBackground->GetWidth(), mBackground->GetHeight());
-	
+	graphics->DrawImage(mBackground.get(), mBgOffsetX, mBgOffsetY, mBackground->GetWidth(), mBackground->GetHeight());
+
 
 	FontFamily fontFamily(L"Arial");
 	Gdiplus::Font font(&fontFamily, 16);
@@ -80,20 +77,20 @@ void CAquarium::OnDraw(Gdiplus::Graphics *graphics)
 	SolidBrush green(Color(0, 64, 0));
 	graphics->DrawString(L"Under the Sea!", -1, &font, PointF(2, 2), &green);
 
-		
 	int xHandPos = mWindowPosition->right - mScrollingHandDisable->GetWidth();
 	int yHandPos = mWindowPosition->bottom - mScrollingHandDisable->GetHeight();
-	
-	
+	graphics->DrawImage(mScrollingHandDisable.get(), xHandPos, yHandPos, mScrollingHandDisable->GetWidth(), mScrollingHandDisable->GetHeight());
+
 	//Draw the hand
-	if (mScrollingActive){
+	if (mScrollingActive)
+	{
 		graphics->DrawImage(mScrollingHandEnable.get(), xHandPos, yHandPos, mScrollingHandEnable->GetWidth(), mScrollingHandEnable->GetHeight());
+
 	}
 	else{
 		graphics->DrawImage(mScrollingHandDisable.get(), xHandPos, yHandPos, mScrollingHandDisable->GetWidth(), mScrollingHandDisable->GetHeight());
-	}
-	
 
+	}
 	
 	for (auto item : mItems)
 	{
@@ -105,7 +102,33 @@ void CAquarium::OnDraw(Gdiplus::Graphics *graphics)
 	{
 		graphics->DrawImage(mTrashcan.get(), 0, 0, mTrashcan->GetWidth(), mTrashcan->GetHeight());
 	}
+
+	
+	
 }
+
+/**
++* \brief Check if mouse over scrolling hand
++* \param x Mouse position x
++* \param y Mouse position y
++* \param window Rectangle of the aquarium winow
++* \returns True if mouse is over scrolling hand
++*/
+bool CAquarium::IsOverScrollingHand(int x, int y, CRect *window)
+{
+	int bottomY = window->bottom;
+	int rightX = window->right;
+	return x > rightX - mScrollingHandDisable->GetWidth() && y >  bottomY - mScrollingHandDisable->GetHeight();
+}
+
+/**
+  * \brief Pass a pointer to the Aquarium
+  * \param window Rectangle
+  */
+ void CAquarium::UpdateWindowPosition(CRect *window){
+	mWindowPosition = window;
+}
+
 
 /** \brief Add an item to the aquarium
 * \param item New item to add
@@ -125,7 +148,7 @@ std::shared_ptr<CItem> CAquarium::HitTest(int x, int y)
 {
 	for (auto i = mItems.rbegin(); i != mItems.rend(); i++)
 	{
-		if ((*i)->HitTest(x-mBgOffsetX, y-mBgOffsetY))
+		if ((*i)->HitTest(x - mBgOffsetX, y - mBgOffsetY))
 		{
 			return *i;
 		}
@@ -166,17 +189,62 @@ bool CAquarium::IsOverTrashcan(int x, int y)
 }
 
 /**
-* \brief Check if mouse over scrolling hand
-* \param x Mouse position x
-* \param y Mouse position y
-* \param window Rectangle of the aquarium winow
-* \returns True if mouse is over scrolling hand
-*/
-bool CAquarium::IsOverScrollingHand(int x, int y, CRect *window)
-{
-	int bottomY = window->bottom;
-	int rightX = window->right;
-	return x > rightX - (int)mScrollingHandDisable->GetWidth() && y >  bottomY - (int)mScrollingHandDisable->GetHeight();
+ * \brief Function that set the offsetX and offsetY of the background
+ * \param point Point where the mose moved
+ * \param rect The window of the aquarium
+ */
+void CAquarium::MoveBackground(CPoint *point, CRect *rect){
+	CPoint dif;
+	dif.x = -(mStartPoint.x - point->x);
+	dif.y = -(mStartPoint.y - point->y);
+	
+	CPoint LB;
+	LB.x = dif.x;
+	LB.y = dif.y + mBackground->GetHeight();
+	
+	bool restrictX = false;
+	bool restrictY = false;
+	
+			//Check top border
+		if (dif.y > 0){
+		restrictY = true;
+		
+	}
+		//Check Low border
+		else if (LB.y < rect->bottom)
+		 {
+		restrictY = true;
+		}
+		//Check left border
+		if (dif.x > 0)
+		 {
+		restrictX = true;
+		}
+		//Check right border
+		else if (dif.x + (int)mBackground->GetWidth() < rect->right)
+		 {
+		restrictX = true;
+		}
+	
+		if (!restrictX)
+		 {
+		mBgOffsetX = dif.x;
+		}
+	if (!restrictY)
+		 {
+		mBgOffsetY = dif.y;
+		}
+	
+}
+
+/**
+  * \brief Set a reference point when click in the background, to know how to move the background
+  * \param p where the mouse click
+  */
+ void CAquarium::SetStartPoint(CPoint *p)
+  {
+	mStartPoint.x = p->x - mBgOffsetX;
+	mStartPoint.y = p->y - mBgOffsetY;
 }
 
 
@@ -341,14 +409,6 @@ void CAquarium::XmlItem(const std::shared_ptr<xmlnode::CXmlNode> &node)
 	}
 }
 
-/**
- * \brief Pass a pointer to the Aquarium
- * \param window Rectangle
- */
-void CAquarium::UpdateWindowPosition(CRect *window){
-	mWindowPosition = window;
-}
-
 /** \brief Handle updates for animation
 * \param elapsed The time since the last update
 */
@@ -401,52 +461,6 @@ void CAquarium::Accept(CItemVisitor *visitor)
 	for (auto item : mItems)
 	{
 		item->Accept(visitor);
-	}
-}
-
-/**
- * \brief Function that set the offsetX and offsetY of the background
- * \param point Point where the mose moved
- * \param rect The window of the aquarium
- */
-void CAquarium::MoveBackground(CPoint *point, CRect *rect){
-	CPoint dif;
-	dif.x = -(mStartPoint.x - point->x);
-	dif.y = -(mStartPoint.y - point->y);
-
-	CPoint LB;
-	LB.x = dif.x;
-	LB.y = dif.y + mBackground->GetHeight();
-
-	bool restrictX = false;
-	bool restrictY = false;
-
-	//Check top border
-	if (dif.y > 0){
-		restrictY = true;
-	}
-	//Check Low border
-	else if (LB.y < rect->bottom)
-	{
-		restrictY = true;
-	}
-	//Check left border
-	if (dif.x > 0)
-	{
-		restrictX = true;
-	}
-	//Check right border
-	else if (dif.x + (int)mBackground->GetWidth() < rect->right)
-	{
-		restrictX = true;
-	}
-	if (!restrictX)
-	{
-		mBgOffsetX = dif.x;
-	}
-	if (!restrictY)
-	{
-		mBgOffsetY = dif.y;
 	}
 }
 

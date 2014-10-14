@@ -116,7 +116,7 @@ void CItem::XmlLoad(const std::shared_ptr<xmlnode::CXmlNode> &node)
 * \param offX The offset of the aquarium background
 * \param offY The offset of the aquarium background
 */
-void CItem::Draw(Gdiplus::Graphics *graphics,int offX, int offY)
+void CItem::Draw(Gdiplus::Graphics *graphics, int offX, int offY)
 {
 	double wid = mItemImage->GetWidth();
 	double hit = mItemImage->GetHeight();
