@@ -15,6 +15,7 @@
 #include "FeedFish.h"
 #include "AirBubbles.h"
 #include "DecorSpartyTreasure.h"
+#include "Aquarium.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
