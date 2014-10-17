@@ -9,12 +9,34 @@
 #include "DecorSpartyTreasure.h"
 #include "Aquarium.h"
 #include "AirBubbles.h"
+#include "Item.h"
+#include "FishAngel.h"
+#include "FishBeta.h"
+#include "FishCat.h"
 
 using namespace std;
 using namespace Gdiplus;
 
 /// Sparty treasure chest filename
 wstring DecorSpartyTreasureImageName(L"images/chest1.png");
+
+/// Max for random number generator
+const double MaxRandom = 10;
+
+/// Min random number to be a Cat Fish
+const double CatFishMin = 8.88;
+
+/// Max random number to be an Angel Fish
+const double AngelFishMax = 8.88;
+
+/// Min random number to be an Angel Fish
+const double AngelFishMin = 6.66;
+
+/// Max random number to be a Beta Fish
+const double BetaFishMax = 6.66;
+
+/// Min random number to be a Beta Fish
+const double BetaFishMin = 3.33;
 
 /** Constructor
 * \param aquarium The aquarium this is a member of
@@ -60,14 +82,30 @@ void CDecorSpartyTreasure::Update(double elapsed)
 			mPause = 1;
 			mOpening = 0;
 
-
-			shared_ptr<CAirBubbles> bubbles;
-			bubbles = make_shared<CAirBubbles>(CItem::GetAquarium());
-
-			mX = CItem::GetX();
-			mY = CItem::GetY();
-			bubbles->SetLocation(mX, mY);
-			CItem::GetAquarium()->AddBubbles(bubbles);
+			// Determines what type if fish or bubbles will come out of sparty treasure chest when openned
+			// Fish range depends on cost it takes to add one
+			mRandom = ((double)rand() / RAND_MAX)*MaxRandom;
+			if (mRandom >= CatFishMin)
+			{
+				auto item = make_shared<CFishCat>(CItem::GetAquarium());
+				MakeItem(item);
+			}
+			else if (mRandom >= AngelFishMin && mRandom < AngelFishMax)
+			{
+				auto item = make_shared<CFishAngel>(CItem::GetAquarium());
+				MakeItem(item);
+			}
+			else if (mRandom >= BetaFishMin && mRandom < BetaFishMax)
+			{
+				
+				auto item = make_shared<CFishBeta>(CItem::GetAquarium());
+				MakeItem(item);
+			}
+			else
+			{
+				auto item = make_shared<CAirBubbles>(CItem::GetAquarium());
+				MakeItem(item);
+			}
 		}
 	}
 	else if (mTime > .2 && mCurrentImage != 0 && mOpening == 0 && mPause == 0)
@@ -82,16 +120,30 @@ void CDecorSpartyTreasure::Update(double elapsed)
 			mOpening = 1;
 		}
 	}
-	else if (mTime > 7 && mOpening == 1 && mPause == 1)
+	else if (mTime > 10 && mOpening == 1 && mPause == 1)
 	{
 		mPause = 0;
 		mTime = 0;
 	}
-	else if (mTime > 7 && mOpening == 0 && mPause == 1)
+	else if (mTime > 10 && mOpening == 0 && mPause == 1)
 	{
 		mPause = 0;
 		mTime = 0;
 	}
+}
+
+/** \brief Adds item to aquarium at the location of the Sparty treasure chest
+ * \param item The item that is going to be added to the aquarium
+ * 
+ * Gets location of Sparty treasure chest, sets the item's location to the same location,
+ * and calls AddItems in CAquarium to add the item to the aquarium
+ */
+void CDecorSpartyTreasure::MakeItem(const std::shared_ptr<CItem> &item)
+{
+	mX = CItem::GetX();
+	mY = CItem::GetY();
+	item->SetLocation(mX, mY);
+	CItem::GetAquarium()->AddItems(item);
 }
 
 /** \brief Save this item to an XML node

@@ -12,10 +12,12 @@
 #include <memory>
 #include <vector>
 #include "XmlNode.h"
+#include "Game.h"
 
 
 class CItem;
 class CItemVisitor;
+class CGame;
 
 /**
 * \brief Represents an aquarium
@@ -28,10 +30,10 @@ public:
 
 	/// Member functions of CAquarium
 	void OnDraw(Gdiplus::Graphics *graphics);
-	void CAquarium::Add(std::shared_ptr<CItem> item);
+	void CAquarium::Add(std::shared_ptr<CItem> item, int cost);
 	std::shared_ptr<CItem> CAquarium::HitTest(int x, int y);
 	bool CAquarium::IsOverScrollingHand(int x, int y, CRect *window);
-	// \brief Set Scrolling status
+	/// \brief Set Scrolling status
 	void CAquarium::SetScrollingActive(bool status){ mScrollingActive = status; }
 	/// \brief Get Scrolling status
 	bool CAquarium::GetScrollingActive(){ return mScrollingActive; }
@@ -62,8 +64,9 @@ public:
 	void XmlItem(const std::shared_ptr<xmlnode::CXmlNode> &node);
 	void CAquarium::Update(double elapsed);
 	bool IsEmpty();
-	void AddBubbles(std::shared_ptr<CItem> item);
-	void DeleteBubbles(std::shared_ptr<CItem> item);
+	void AddItems(std::shared_ptr<CItem> item);
+	void DeleteItems(std::shared_ptr<CItem> item);
+	void DeleteBubbles(std::shared_ptr<CItem> bubbles);
 
 	/// \brief Get the width of the aquarium
 	/// \returns Aquarium width
@@ -83,6 +86,9 @@ public:
 	/// \brief gets the max cleanliness of the tank possible
 	int GetTankMaxCleanliness(){ return mTankMaxCleanliness; }
 
+	/** \brief returns the current game */
+	CGame GetGame() { return mGame; }
+
 private:
 	std::unique_ptr<Gdiplus::Bitmap> mBackground; ///< Background image to use
 	std::unique_ptr<Gdiplus::Bitmap> mTrashcan;  ///< Trash can image
@@ -90,11 +96,14 @@ private:
 	/// All of the items to populate our aquarium
 	std::vector<std::shared_ptr<CItem> > mItems;
 	
-	/// Bubbles to be added
+	/// Items to be added
 	std::vector<std::shared_ptr<CItem> > mItemsAdd;
 
-	/// Bubbles to be deleted
+	/// Items to be deleted that leads to loss in points
 	std::vector<std::shared_ptr<CItem> > mItemsDelete;
+
+	/// Bubbles to be deleted that were clicked on
+	std::vector<std::shared_ptr<CItem> > mBubblesDelete;
 
 	///Max tank cleanliness
 	int mTankMaxCleanliness = 40;
@@ -115,6 +124,11 @@ private:
 	/// Reference point when start to movie
 	CPoint mStartPoint;
 
+	/// Game object to be used as the current game
+	CGame mGame;
+
+	/// Keep track of time between score updates
+	double mTime = 0;
 };
 
 

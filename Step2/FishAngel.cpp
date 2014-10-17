@@ -20,6 +20,9 @@ const int MaxSpeedX = 25;
 /// Speed in pixels per second
 const int MinSpeedX = 10;
 
+/// Cost of adding baby fish to aquarium
+const int BabyCost = 0;
+
 /** Constructor
 * \param aquarium The aquarium this is a member of
 */
@@ -36,7 +39,8 @@ CFishAngel::CFishAngel(CAquarium *aquarium) : CFish(aquarium, FishAngelImageName
 	mFood = 15;
 	///Days since food
 	mDaysSinceFed = 0;
-
+	/// Fish's worth
+	mMultiplier = 4;
 }
 
 /**
@@ -74,8 +78,8 @@ void CFishAngel::PassTime(){
 			auto babe2 = std::make_shared<CFishAngel>(aquarium);
 			babe1->SetLocation(GetX(), GetY());
 			babe2->SetLocation(GetX(), GetY());
-			aquarium->Add(babe1);
-			aquarium->Add(babe2);
+			aquarium->Add(babe1, BabyCost);
+			aquarium->Add(babe2, BabyCost);
 
 			FinishPregnancy();
 		}

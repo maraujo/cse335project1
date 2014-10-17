@@ -36,6 +36,9 @@ public:
 	/// \brief check if hungry (does nothing)
 	void Hunger() {};
 
+	/** \brief States that item clicked on is a bubbles object */
+	bool IsBubbles() { return true; }
+
 private:
 	/// Air Bubble in the X direction
 	double mSpeedX;

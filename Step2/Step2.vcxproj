@@ -110,6 +110,7 @@
     <ClInclude Include="FishAngel.h" />
     <ClInclude Include="FishBeta.h" />
     <ClInclude Include="FishCat.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemVisitor.h" />
     <ClInclude Include="MainFrm.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="FishAngel.cpp" />
     <ClCompile Include="FishBeta.cpp" />
     <ClCompile Include="FishCat.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemVisitor.cpp" />
     <ClCompile Include="MainFrm.cpp" />

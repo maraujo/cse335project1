@@ -38,6 +38,8 @@ CFishCat::CFishCat(CAquarium *aquarium) : CFish(aquarium,FishCatImageName)
 	mFood = 10;
 	///Days since food
 	mDaysSinceFed = 0;
+	/// Fish's worth
+	mMultiplier = 6;
 }
 
 /**

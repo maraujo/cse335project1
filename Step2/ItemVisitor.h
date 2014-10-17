@@ -14,6 +14,7 @@ class CFishAngel;
 class CFishCat;
 class CFishBeta;
 class CDecorTreasure;
+class CDecorSpartyTreasure;
 
 /**
 * \brief Item Visitor Class Implementation
@@ -39,5 +40,7 @@ public:
 	* \param treasure we are visiting */
 	virtual void VisitDecorTreasure(CDecorTreasure *treasure){};
 
-
+	/** \brief Visit a CDecorSpartyTreasure object
+	* \param treasure we are visiting */
+	virtual void VisitDecorSpartyTreasure(CDecorSpartyTreasure *treasure){};
 };
