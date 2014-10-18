@@ -112,6 +112,33 @@ BEGIN
         MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
         MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
     END
+    POPUP "&Rules"
+    BEGIN
+        MENUITEM "&Keep as many fish alive as you can", ID_RULES_KEEPASMANYFISHALIVEASYOUCAN
+        MENUITEM "&Points will be given for fish alive", ID_RULES_POINTSWILLBEGIVENFORFISHALIVE
+        MENUITEM "&More Points will be given for more expensive fish", ID_RULES_MOREPOINTSWILLBEGIVENFORMOREEXPENSIVEFISH
+        MENUITEM "&but they will also die faster if not taken care of", ID_RULES_BUTTHEYWILLALSODIEFASTERIFNOTTAKENCAREOF
+        MENUITEM "&Costs for each fish and item are listed under the menu option ""Cost""", ID_RULES_COSTSFOREACHFISHANDITEMARELISTEDUNDERTHEMENUOPTION
+        MENUITEM " ",                           ID_RULES_32797
+        MENUITEM "&Fish will die due to lack of food", ID_RULES_FISHWILLDIEDUETOLACKOFFOOD
+        MENUITEM "&Tank will also get dirty over time", ID_RULES_TANKWILLALSOGETDIRTYOVERTIME
+        MENUITEM "&User will loser points for fish dying and the tank becoming dirty", ID_RULES_USERWILLLOSERPOINTSFORFISHDYINGANDTHETANKBECOMINGDIRTY
+        MENUITEM " ",                           ID_RULES_
+        MENUITEM "&Sparty Treasure Chests will randomly put fish in the aquarium part of the time", ID_RULES_SPARTYTREASURECHESTSWILLRANDOMLYPUTFISHINTHEAQUARIUMPARTOFTHETIME
+        MENUITEM "&the other times, it will add ""acid bubbles""", ID_Menu
+        MENUITEM "&If the acid bubbles reaches the top of the aquarium,", ID_RULES_IFTHEACIDBUBBLESREACHESTHETOPOFTHEAQUARIUM
+        MENUITEM "&it bursts and dirties the aquarium, resulting in a loss of points", ID_RULES_ITBURSTSANDDIRTIESTHEAQUARIUM
+        MENUITEM "&User may click on the bubbles before they reach the top of the aquarium to stop them", ID_RULES_USERMAYCLICKONTHEBUBBLESBEFORETHEYREACHTHETOPOFTHEAQUARIUMTOSTOPTHEM
+        MENUITEM " ",                           ID_RULES_32801
+        MENUITEM "&The game will be over when the score becomes negative", ID_RULES_THEGAMEWILLBEOVERWHENTHESCOREBECOMESNEGATIVE
+    END
+    POPUP "&Costs"
+    BEGIN
+        MENUITEM "&BetaFish = 10 Points",       ID_COSTS_BETAFISH
+        MENUITEM "&Angel Fish = 30 Points",     ID_COSTS_ANGELFISH
+        MENUITEM "&Cat Fish = 50 Points",       ID_COSTS_CATFISH
+        MENUITEM "Sparty Treasure Chest = 100 Points", ID_COSTS_SPARTYTREASURECHEST
+    END
     POPUP "&Add Fish"
     BEGIN
         MENUITEM "&Beta Fish",                  ID_ADDFISH_BETAFISH

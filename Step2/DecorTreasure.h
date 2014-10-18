@@ -38,5 +38,8 @@ public:
 	virtual bool CheckFood() override { return true; };
 	/// \brief check if hungry (does nothing)
 	virtual void Hunger() override {};
+
+	/** \brief States that item clicked on is a bubbles object */
+	bool IsBubbles() { return false; }
 };
 

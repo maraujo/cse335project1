@@ -39,6 +39,15 @@ public:
 	/// \brief check if hungry (does nothing)
 	void Hunger() {};
 
+	void CDecorSpartyTreasure::MakeItem(const std::shared_ptr<CItem> &node);
+
+	/** \brief Accept a visitor
+	* \param visitor The visitor we accept */
+	virtual void Accept(CItemVisitor *visitor) override { visitor->VisitDecorSpartyTreasure(this); }
+
+	/** \brief States that item clicked on is a bubbles object */
+	bool IsBubbles() { return false; }
+
 private:
 	/// The current image of the chest
 	int mCurrentImage = 0;
@@ -52,7 +61,10 @@ private:
 	/// Keeps track of time
 	double mTime = 0;
 
-	// Item location in the aquarium
+	/// Item location in the aquarium
 	double   mX = 0;     ///< X location for the center of the item
 	double   mY = 0;     ///< Y location for the center of the item
+
+	/// random number to determine if bubbles or fish come out of treasure chest
+	double mRandom;
 };

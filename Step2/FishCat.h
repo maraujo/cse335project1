@@ -11,6 +11,8 @@
 #include "Fish.h"
 #include "Aquarium.h"
 
+/// Cost of adding baby fish to aquarium
+const int BabyCost = 0;
 
 /**
 * \brief Implements a Cat fish
@@ -45,8 +47,8 @@ public:
 				auto babe2 = std::make_shared<CFishCat>(aquarium);
 				babe1->SetLocation(GetX(), GetY());
 				babe2->SetLocation(GetX(), GetY());
-				aquarium->Add(babe1);
-				aquarium->Add(babe2);
+				aquarium->Add(babe1, BabyCost);
+				aquarium->Add(babe2, BabyCost);
 
 				FinishPregnancy();
 			}

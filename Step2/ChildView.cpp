@@ -16,6 +16,7 @@
 #include "AirBubbles.h"
 #include "DecorSpartyTreasure.h"
 #include "Aquarium.h"
+#include "Game.h"
 
 
 #ifdef _DEBUG
@@ -33,7 +34,24 @@ const int InitialX = 200;
 
 /// Initial fish Y location
 const int InitialY = 200;
+ 
+/// Point cost of adding a Beta Fish
+const int FishBetaCost = 10;
 
+/// Point cost of adding an Angel Fish
+const int FishAngelCost = 30;
+
+/// Point cost of adding a Cat Fish
+const int FishCatCost = 50;
+
+/// Point cost of adding a Sparty Treasure Chest
+const int DecorSpartyTreasureCost = 100;
+
+/// Point cost of adding a Treasure Chest
+const int DecorTreasureChestCost = 0;
+
+/// Point cost of adding bubbles
+const int AirBubblesCost = 0;
 
 
 // CChildView
@@ -153,7 +171,8 @@ void CChildView::OnAddfishBetafish()
 	// TODO: Add your command handler code here
 	auto fish = make_shared<CFishBeta>(&mAquarium);
 	fish->SetLocation(InitialX, InitialY);
-	mAquarium.Add(fish);
+	auto game = mAquarium.GetGame();
+	mAquarium.Add(fish, FishBetaCost);
 	Invalidate();
 }
 
@@ -167,6 +186,10 @@ void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 	if (mGrabbedItem != nullptr)
 	{
 		mAquarium.sendItemBack(mGrabbedItem);
+		if (mGrabbedItem->IsBubbles())
+		{
+			mAquarium.DeleteBubbles(mGrabbedItem);
+		}
 		// We have selected an item
 		// Move it to the end of the list of items
 		// you'll need code here to do that...
@@ -253,7 +276,8 @@ void CChildView::OnAddfishAngelfish()
 	// TODO: Add your command handler code here
 	auto fish = make_shared<CFishAngel>(&mAquarium);
 	fish->SetLocation(InitialX, InitialY);
-	mAquarium.Add(fish);
+	CGame game = mAquarium.GetGame();
+	mAquarium.Add(fish, FishAngelCost);
 	Invalidate();
 }
 
@@ -267,7 +291,8 @@ void CChildView::OnAddfishCatfish()
 	// TODO: Add your command handler code here
 	auto fish = make_shared<CFishCat>(&mAquarium);
 	fish->SetLocation(InitialX, InitialY);
-	mAquarium.Add(fish);
+	CGame game = mAquarium.GetGame();
+	mAquarium.Add(fish, FishCatCost);
 	Invalidate();
 }
 
@@ -363,7 +388,7 @@ void CChildView::ToogleTrashcan()
   {
 	  auto decor = make_shared<CDecorTreasure>(&mAquarium);
 	  decor->SetLocation(InitialX, InitialY);
-	  mAquarium.Add(decor);
+	  mAquarium.Add(decor, DecorTreasureChestCost);
 	  Invalidate();
   }
 
@@ -374,6 +399,7 @@ void CChildView::ToogleTrashcan()
   {
 	  auto decor = make_shared<CDecorSpartyTreasure>(&mAquarium);
 	  decor->SetLocation(InitialX, InitialY);
-	  mAquarium.Add(decor);
+	  CGame game = mAquarium.GetGame();
+	  mAquarium.Add(decor, DecorSpartyTreasureCost);
 	  Invalidate();
   }

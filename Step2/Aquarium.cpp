@@ -15,8 +15,10 @@
 #include "XmlNode.h"
 #include "DecorSpartyTreasure.h"
 #include "AirBubbles.h"
+#include "Game.h"
 
 #include <algorithm>
+#include <sstream>
 
 using namespace std;
 using namespace Gdiplus;
@@ -28,6 +30,18 @@ const int TrashCanWidth = 51;
 const int TrashCanHeight = 70;
 /// FrameCounter
 int frameCount = 0;
+
+/// Point reduction for first dirty background image
+const int DirtyTankReduc = 50;
+
+/// Point reduction for second dirty background image
+const int DirtierTankReduc = 75;
+
+/// Point reduction for last dirty background image
+const int FilthyTankReduc = 100;
+
+/// Cost of adding items from load
+const int LoadItemCost = 0;
 
 /**
 * \brief Constructor
@@ -75,7 +89,12 @@ void CAquarium::OnDraw(Gdiplus::Graphics *graphics)
 	Gdiplus::Font font(&fontFamily, 16);
 
 	SolidBrush green(Color(0, 64, 0));
-	graphics->DrawString(L"Under the Sea!", -1, &font, PointF(2, 2), &green);
+
+	wstringstream str;
+	CGame game = GetGame();
+	int score = game.GetScore();
+	str << L"Your Current Score: " << score;
+	graphics->DrawString(str.str().c_str(), -1, &font, PointF(2, 2), &green);
 
 	int xHandPos = mWindowPosition->right - mScrollingHandDisable->GetWidth();
 	int yHandPos = mWindowPosition->bottom - mScrollingHandDisable->GetHeight();
@@ -132,10 +151,15 @@ bool CAquarium::IsOverScrollingHand(int x, int y, CRect *window)
 
 /** \brief Add an item to the aquarium
 * \param item New item to add
+* \param cost Cost of the item of be added
 */
-void CAquarium::Add(std::shared_ptr<CItem> item)
+void CAquarium::Add(std::shared_ptr<CItem> item, int cost)
 {
-	mItems.push_back(item);
+	if (mGame.CanAfford(cost))
+	{
+		mGame.ReduceScore(cost);
+		mItems.push_back(item);
+	}
 }
 
 /** \brief Test an x,y click location to see if it clicked
@@ -285,6 +309,13 @@ void CAquarium::Save(const std::wstring &filename)
 	//
 	auto root = CXmlNode::CreateDocument(L"aqua");
 
+	// Saves the cleanliness of the tank
+	auto aquaNode = root->AddChild(L"aqua");
+	aquaNode->SetAttribute(L"cleanliness", mTankCleanliness);
+
+	auto gameNode = root->AddChild(L"game");
+	aquaNode->SetAttribute(L"score", mGame.GetScore());
+
 	// Iterate over all items and save them
 	for (auto item : mItems)
 	{
@@ -327,6 +358,15 @@ void CAquarium::Load(const std::wstring &filename)
 			if (node->GetType() == NODE_ELEMENT && node->GetName() == L"item")
 			{
 				XmlItem(node);
+			}
+			else if (node->GetType() == NODE_ELEMENT && node->GetName() == L"aqua")
+			{
+				mTankCleanliness = node->GetAttributeIntValue(L"cleanliness", 0); //< loads cleanliness of the tank
+			}
+			else if (node->GetType() == NODE_ELEMENT && node->GetName() == L"game")
+			{
+				int score = node->GetAttributeIntValue(L"score", 0); //< loads score for CGame
+				mGame.SetScore(score);
 			}
 		}
 	}
@@ -405,12 +445,18 @@ void CAquarium::XmlItem(const std::shared_ptr<xmlnode::CXmlNode> &node)
 	if (item != nullptr)
 	{
 		item->XmlLoad(node);
-		Add(item);
+		Add(item, LoadItemCost);
 	}
 }
 
 /** \brief Handle updates for animation
 * \param elapsed The time since the last update
+ * Handles updates for animation as well as function calls 
+ * to check how user is maintaining the aquarium and 
+ * to check if any breeding had occurred.
+ * Also adds and deletes items from the files when needed
+ * and reduces points when fish are deleted or bubbles reach the top
+ * of the aquarium and every so often adds points to the total score
 */
 void CAquarium::Update(double elapsed)
 {
@@ -418,6 +464,7 @@ void CAquarium::Update(double elapsed)
 	/// Frame Conte
 	frameCount++;
 
+	mTime += elapsed;
 	
 	if (frameCount % 33 == 0){
 		CBreeding breedVisitor;
@@ -436,21 +483,51 @@ void CAquarium::Update(double elapsed)
 		if (item->GetY() < 0)
 		{
 			mItemsDelete.push_back(item);
+			mTankCleanliness -= 10;
 		}
 	}
-	
+
 	for (auto item : mItemsAdd)
 	{
 		mItems.push_back(item);
 	}
 
+	for (auto bubble : mBubblesDelete)
+	{
+		DeleteItem(bubble);
+	}
+
 	for (auto item : mItemsDelete)
 	{
 		DeleteItem(item);
+		int FishMultiplier = item->GetMultiplier();
+		mGame.ReduceScore(10 * FishMultiplier);
+	}
+
+	if (mTime > 5){
+		for (auto item : mItems)
+		{
+			int FishMultiplier = item->GetMultiplier();
+			mGame.AddScore(1 * FishMultiplier);
+		}
+		
+		mTime = 0;
+	}
+
+	if (mGame.Loser())
+	{
+		mGame.ResetGame();
+		Clear();
+		mTankCleanliness = 40;
+		mTime = 0;
+		wstringstream str;
+		str << L"Game Over. You must keep your score above 0. Try Again.";
+		AfxMessageBox(str.str().c_str());
 	}
 
 	mItemsAdd.clear();
 	mItemsDelete.clear();
+	mBubblesDelete.clear();
 }
 
 /** \brief Accept a visitor for the collection
@@ -475,16 +552,12 @@ void CAquarium::CheckFishFood()
 	{
 		if (item->CheckFood() == false)
 		{
-			ItemsToDelete.push_back(item);
+			mItemsDelete.push_back(item);
 		}
 		else
 		{
 			item->Hunger();
 		}
-	}
-	for (auto DelItem : ItemsToDelete)
-	{
-		DeleteItem(DelItem);
 	}
 }
 
@@ -504,19 +577,28 @@ bool CAquarium::IsEmpty()
 /** \brief Add an item to vector to be added to aquarium
  * \param item New item to add
  */
-void CAquarium::AddBubbles(std::shared_ptr<CItem> item)
+void CAquarium::AddItems(std::shared_ptr<CItem> item)
 {
 	mItemsAdd.push_back(item);
 }
 
 /** \brief Add an item to vector to be deleted from aquarium
  * \param item New item to delete
+ *
+ * Items added this vector will result in a loss of points
  */
-void CAquarium::DeleteBubbles(std::shared_ptr<CItem> item)
+void CAquarium::DeleteItems(std::shared_ptr<CItem> item)
 {
 	mItemsDelete.push_back(item);
 }
 
+/** \brief Add an item to vector to be deleted from aquarium
+* \param item New item to delete
+*/
+void CAquarium::DeleteBubbles(std::shared_ptr<CItem> item)
+{
+	mBubblesDelete.push_back(item);
+}
 
 void CAquarium::DirtyTank()
 {
@@ -537,6 +619,8 @@ void CAquarium::DirtyTank()
 		{
 			AfxMessageBox(L"Failed to open images/backgroundW1.png");
 		}
+
+		mGame.ReduceScore(DirtyTankReduc);
 	}
 
 	if (mTankCleanliness <= 20 && mTankCleanliness >= 11)
@@ -547,6 +631,8 @@ void CAquarium::DirtyTank()
 		{
 			AfxMessageBox(L"Failed to open images/backgroundW2.png");
 		}
+
+		mGame.ReduceScore(DirtierTankReduc);
 	}
 	if (mTankCleanliness <= 10)
 	{
@@ -557,6 +643,8 @@ void CAquarium::DirtyTank()
 			AfxMessageBox(L"Failed to open images/backgroundW3.png");
 		}
 		mTankCleanliness = 1;
+		
+		mGame.ReduceScore(FilthyTankReduc);
 	}
 
 	mTankCleanliness--;

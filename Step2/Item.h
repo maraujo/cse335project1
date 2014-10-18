@@ -96,9 +96,20 @@ public:
 
 	void SetImage(const std::wstring &file);
 
+	/** \brief Virtual function that returns false if hit clicked on is not a bubbles object */
+	virtual bool IsBubbles() { return false; }
+
+	/** \brief Returns the multiplier of the fish */
+	int GetMultiplier() { return mMultiplier; }
+
 protected:
 
 	std::unique_ptr<Gdiplus::Bitmap> mItemImage; ///< member that loads Fish Image 
+
+	/// Determines fish's worth. Larger number means 
+	/// fish die more easily but earn more points when alive
+	/// Initialized to 0 for decor and bubbles
+	int mMultiplier = 0;
 
 private:
 	/// The aquarium this item is contained in

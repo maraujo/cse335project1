@@ -38,6 +38,8 @@ CFishBeta::CFishBeta(CAquarium *aquarium) : CFish(aquarium,FishBetaImageName)
 	mFood = 20;
 	///Days since food
 	mDaysSinceFed = 0;
+	/// Fish's worth
+	mMultiplier = 2;
 }
 
 /**

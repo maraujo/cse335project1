@@ -63,6 +63,9 @@ public:
 	/// \brief increments the days since the fish was fed
 	virtual void Hunger() override { mDaysSinceFed++; }
 
+	/** \brief States that item clicked on is a bubbles object */
+	virtual bool IsBubbles() { return false; }
+
 protected:
 	/// Fish speed in the X direction
 	double mSpeedX;
